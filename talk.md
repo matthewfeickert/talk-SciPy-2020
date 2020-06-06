@@ -68,6 +68,11 @@ Provide constraints on models through setting best limits
 ]
 ]
 
+- All require .bold[building statistical models] and .bold[fitting models] to data to perform statistical inference
+- Model complexity can be huge for complicated searches
+- **Problem:** Time to fit can be .bold[many hours]
+- .blue[Goal:] Empower analysts with fast fits and expressive models
+
 ---
 
 class: middle
