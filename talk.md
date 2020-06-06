@@ -4,15 +4,12 @@ count: false
 # pyhf: a pure Python statistical fitting
 # library with tensors and autograd
 
-<br>
-
+.center.width-20[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]<br><br>
 .huge.blue[Matthew Feickert]<br>
-.huge[(University of Illinois at Urbana-Champaign)]
-.center.width-5[[![illinois_logo](assets/logos/logo_institution_small.png)](https://physics.illinois.edu/)]<br>
 <br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 
-[Talk Event Name](https://talk-event-url)
+[SciPy 2020](https://talk-event-url)
 
 July DDth, 2020
 

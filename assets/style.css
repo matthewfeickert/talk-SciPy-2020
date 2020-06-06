@@ -378,32 +378,6 @@ td {
 
 /* Title slide */
 
-.title-slide:after {
-    content: '';
-    background: url("../assets/logos/logo_institution.png") no-repeat;
-    background-size: 100% 100%;
-    width: 288px;
-    height: 50px;
-    position: absolute;
-    bottom: 2em;
-    left: 3.3em;
-    display: inline-block;
-}
-
-/* Hack to get pyhf logo on */
-.title-slide:before {
-    content: '';
-    background: url("https://iris-hep.org/assets/logos/pyhf-logo.png") no-repeat;
-    /* background: url("../assets/logos/logo_experiment.png") no-repeat; */
-    background-size: 100% 100%;
-    width: 160px;
-    height: 108px;
-    position: absolute;
-    bottom: 2em;
-    right: 3.3em;
-    display: inline-block;
-}
-
 .title-slide {
     vertical-align: middle;
 }
