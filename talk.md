@@ -1,8 +1,8 @@
 class: middle, center, title-slide
 count: false
 
-# pyhf: a pure Python statistical fitting
-# library with tensors and autograd
+# pyhf
+.large[a pure Python statistical fitting library with tensors and autograd]
 
 .center.width-20[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]<br><br>
 .huge.blue[Matthew Feickert]<br>
