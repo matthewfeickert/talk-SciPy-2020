@@ -17,9 +17,9 @@ count: false
 July DDth, 2020
 
 ---
-# Collaborators
+# `pyhf` core dev team
 
-<br><br>
+<br>
 
 .grid[
 .kol-1-3.center[
@@ -30,18 +30,41 @@ July DDth, 2020
 CERN
 ]
 .kol-1-3.center[
-.circle.width-80[![Giordon](https://avatars0.githubusercontent.com/u/761483)]
+.circle.width-80[![Matthew](https://avatars2.githubusercontent.com/u/5142394)]
+
+[Matthew Feickert](https://www.matthewfeickert.com/)
+
+Illinois
+.center.bold.blue[IRIS-HEP]
+]
+.kol-1-3.center[
+.circle.width-75[![Giordon](https://avatars0.githubusercontent.com/u/761483)]
 
 [Giordon Stark](https://github.com/kratsg)
 
 UCSC SCIPP
 ]
+]
+
+---
+# Goals of physics analysis at the LHC
+
+.kol-1-1[
 .kol-1-3.center[
-.circle.width-70[![Kyle](figures/collaborators/cranmer.png)]
+.width-100[[![ATLAS_Higgs_discovery](figures/ATLAS_Higgs_discovery.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2012-27/)]
+Search for new physics
+]
+.kol-1-3.center[
+<br>
+.width-100[[![CMS-PAS-HIG-19-004](figures/CMS-PAS-HIG-19-004.png)](http://cms-results.web.cern.ch/cms-results/public-results/superseded/HIG-19-004/index.html)]
 
-[Kyle Cranmer](http://theoryandpractice.org/)
+<br>
+Make precision measurements
+]
+.kol-1-3.center[
+.width-110[[![SUSY-2018-31_limit](figures/SUSY-2018-31_limit.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-31/)]
 
-NYU
+Provide constraints on models through setting best limits
 ]
 ]
 
