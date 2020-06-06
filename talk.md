@@ -1,8 +1,8 @@
 class: middle, center, title-slide
 count: false
 
-# Talk Template
-Subtitle of talk
+# pyhf: a pure Python statistical fitting
+# library with tensors and autograd
 
 <br>
 
@@ -14,7 +14,7 @@ Subtitle of talk
 
 [Talk Event Name](https://talk-event-url)
 
-Month DDth, Year
+July DDth, 2020
 
 ---
 # Collaborators
