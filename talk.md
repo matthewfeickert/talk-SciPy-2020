@@ -25,6 +25,13 @@ July 7th, 2020
 - .bold[NONE OF THESE PEOPLE KNOW WHAT PARTICLE PHYSICS IS]
 
 ---
+class: middle
+
+# Introduction and Motivation
+
+Remove this later
+
+---
 # `pyhf` core dev team
 
 <br>
@@ -83,13 +90,6 @@ ATLAS
 
 <br>
 .center.width-100[[![CERN_ribbon_of_truth](figures/CERN_ribbon_of_truth.png)](https://home.cern/)]
-
----
-class: middle
-
-# Introduction and Motivation
-
-Remove this later
 
 ---
 # Goals of physics analysis at the LHC
