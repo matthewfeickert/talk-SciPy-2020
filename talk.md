@@ -56,6 +56,13 @@ UCSC SCIPP
 ]
 
 ---
+class: middle
+
+# Introduction and Motivation
+
+Remove this later
+
+---
 # Goals of physics analysis at the LHC
 
 .kol-1-1[
@@ -83,10 +90,25 @@ Provide constraints on models through setting best limits
 - .blue[Goal:] Empower analysts with fast fits and expressive models
 
 ---
-
 class: middle
 
-# A transition slide topic
+# Performance gain through tensorization
+
+Remove this later
+
+---
+class: middle
+
+# Model specification
+
+Remove this later
+
+---
+class: middle
+
+# Conclusions
+
+Remove this later
 
 ---
 # HistFactory Template
