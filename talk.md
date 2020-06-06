@@ -176,53 +176,52 @@ class: middle
 Remove this later
 
 ---
-# HistFactory Template
-
-<br>
-
-$$\begin{aligned}
-&\mathcal{P}\left(n\_{c}, x\_{e}, a\_{p} \middle|\phi\_{p}, \alpha\_{p}, \gamma\_{b} \right) = \\\\
-&{\color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \left[\textrm{Pois}\left(n\_{c} \middle| \nu\_{c}\right) \prod\_{e=1}^{n\_{c}} f\_{c}\left(x\_{e} \middle| \vec{\alpha}\right)\right]}} {\color{red}{G\left(L\_{0} \middle| \lambda, \Delta\_{L}\right) \prod\_{p\\, \in\\, \mathbb{S}+\Gamma} f\_{p}\left(a\_{p} \middle| \alpha\_{p}\right)}}
-\end{aligned}$$
-
-.bold[Use:] Multiple disjoint _channels_ (or regions) of binned distributions with multiple _samples_ contributing to each with additional (possibly shared) systematics between sample estimates
-
-.bold[Main pieces:]
-
-- .blue[Main Poisson p.d.f. for bins observed in all channels]
-- .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
-   - encoding systematic uncertainties (normalization, shape, etc)
-
----
-# Formation definition
-
-Following Hopcroft and Ullman (1979, p. 148), a (one-tape) Turing machine can be formally defined as a 7-tuple $M=(Q,\Gamma,b,\Sigma,\delta, q\_0, F)$, where
-- $Q$ is a finite, non-empty set of states;
-- $\Gamma$ is a finite, non-empty set of tapes alphabet symbols;
-- $b \in \Gamma \setminus \\{b\\}$ is the set of input symbols, that is, the set of symbols allowed to appear in the initial tape contents;
-- $q\_0 \in Q$ is the initial state;
-- $F \subseteq Q$ is the set of final states or accepting states. The initial tape contents is said to be accepted by $M$ if it eventually halts in a state from $F$.
-- $\delta: (Q \setminus F) \times \Gamma \rightarrow Q \times \Gamma \times \\{L,R\\}$ is the state transition function.
-
----
-
-Next slide
-
-.footnote[This is a footnote.]
-
----
-
-class: middle
-
 # Summary
+.kol-1-2[
+.large[`pyhf` provides:]
+- .large[Accelerated fitting]
+   - .bold[reducing time to insight]!
+   - Hardware acceleration on GPUs and vectorized operations
+   - Backend agnostic acceleration
+   - Human acceleration through clean Pythonic API
+- .large[Flexible schema great for open likelihood .bold[preservation]]
+   - JSON: ubiquitous, universal support, versionable
+   - Easily describe HistFactory models
+   - First full likelihood from an LHC experiment openly published
+- .large[Enabling technology for .bold[reinterpretation]]
+   - JSON Patch files for efficient computation of new signal models
+]
+.kol-1-2[
+<br>
+<br>
+<br>
+.center.width-60[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+]
 
 ---
-
 class: middle
 
-- abc
-- def
-- ghi
+.center[
+# Thanks for listening!
+# Come talk with us!
+
+.large[[www.scikit-hep.org/pyhf](https://scikit-hep.org/pyhf/)]
+]
+.grid[
+.kol-1-3.center[
+.width-90[[![scikit-hep_logo](https://scikit-hep.org/assets/images/logo.png)](https://scikit-hep.org/)]
+]
+.kol-1-3.center[
+<br>
+.width-90[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+]
+.kol-1-3.center[
+<br>
+<br>
+.width-90[[![iris-hep_logo](https://iris-hep.org/assets/logos/Iris-hep-4-no-long-name.png)](https://iris-hep.org/)]
+]
+]
+
 
 ---
 class: end-slide, center
