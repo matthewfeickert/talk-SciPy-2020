@@ -11,7 +11,7 @@ count: false
 
 [SciPy 2020](https://talk-event-url)
 
-July DDth, 2020
+July 7th, 2020
 
 ---
 # Self notes while writing talk
