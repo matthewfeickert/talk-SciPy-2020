@@ -22,6 +22,7 @@ July 7th, 2020
 - If you've given a talk, tutorial, or other presentation before, include that information as well as a link to slides or a video if they're available.
 - .bold[SciPy talks are generally 25 minutes] with 2-3 minutes for questions. Please keep the length of time in mind as you structure your outline.
 - Your talk should not be a commercial for your company’s product. However, you are welcome to talk about how your company solved a problem, or notable open-source projects that may benefit attendees.
+- .bold[NONE OF THESE PEOPLE KNOW WHAT PARTICLE PHYSICS IS]
 
 ---
 # `pyhf` core dev team
@@ -51,6 +52,37 @@ Illinois
 UCSC SCIPP
 ]
 ]
+
+---
+# We're high energy particle physicists
+.kol-1-2.center[
+<br>
+.width-95[[![LHC](figures/LHC.jpg)](https://home.cern/science/accelerators/large-hadron-collider)]
+LHC
+]
+.kol-1-2.center[
+.width-95[[![ATLAS_TRex](figures/ATLAS_TRex.png)](https://atlas.cern/)]
+ATLAS
+]
+.kol-1-1[
+.kol-1-2.center[
+.width-45[[![SM_mug](figures/SM_mug.jpg)](https://twitter.com/HEPfeickert/status/1269406145858469891?s=20)]
+]
+.kol-1-2.center[
+.kol-1-2.center[
+.width-100[[![ParticleZoo_Higgs](figures/ParticleZoo_Higgs.jpg)](https://twitter.com/HEPfeickert/status/1269406145858469891?s=20)]
+]
+.kol-1-2.center[
+.width-85[[![ParticleZoo_DarkMatter](figures/ParticleZoo_DarkMatter.jpg)](https://twitter.com/HEPfeickert/status/1269406145858469891?s=20)]
+]
+]
+]
+
+---
+# So we want to know
+
+<br>
+.center.width-100[[![CERN_ribbon_of_truth](figures/CERN_ribbon_of_truth.png)](https://home.cern/)]
 
 ---
 class: middle
