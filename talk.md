@@ -4,10 +4,11 @@ count: false
 # pyhf
 .large[a pure Python statistical fitting library with tensors and autograd]
 
-.center.width-20[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]<br><br>
+.center.width-30[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]<br><br>
 .huge.blue[Matthew Feickert]<br>
 <br>
-[matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
+[matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)<br>
+[@HEPfeickert](https://twitter.com/HEPfeickert)
 
 [SciPy 2020](https://talk-event-url)
 
