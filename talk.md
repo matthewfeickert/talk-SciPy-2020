@@ -180,12 +180,12 @@ $$
    - encoding systematic uncertainties (normalization, shape, etc)
 
 <br>
-.center[.bold[Until now], the only implementation of HistFactory has been in RooStats+RooFit (C++)]
+.center[.bold[Until now], the only implementation of HistFactory has been in a monolithic `C++` library used in HEP]
 
 .bold[Challenges]
-- Preservation: Likelihood stored in the binary ROOT format
-   - Challenge for long-term preservation (i.e. HEPData)
-- To start using HistFactory p.d.f.s first have to learn ROOT, RooFit, RooStats
+- Preservation: Likelihood stored in a domain specific binary format
+   - Challenge for long-term preservation
+- To start using HistFactory p.d.f.s first have to learn a whole `C++` framework
 - Difficult to use for reinterpretation
 
 ---
