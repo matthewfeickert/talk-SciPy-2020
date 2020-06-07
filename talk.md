@@ -238,6 +238,31 @@ Remove this later
 ]
 
 ---
+# Unified API through shim tensorlib
+<!--  -->
+.kol-1-1[
+.kol-1-2.center[
+.width-90[![carbon_normal_dist_numpy](figures/carbon_normal_dist_numpy.png)]
+
+NumPy
+]
+.kol-1-2.center[
+.width-90[![carbon_normal_dist_jax](figures/carbon_normal_dist_jax.png)]
+<br>JAX
+]
+]
+.kol-1-1[
+.kol-1-2.center[
+.width-95[![carbon_normal_dist_tensorflow](figures/carbon_normal_dist_tensorflow.png)]
+<br>Tensorflow
+]
+.kol-1-2.center[
+.width-95[![carbon_normal_dist_pytorch](figures/carbon_normal_dist_pytorch.png)]
+<br>PyTorch
+]
+]
+
+---
 class: middle
 
 # Model specification
