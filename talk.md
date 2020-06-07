@@ -129,6 +129,15 @@ Provide constraints on models through setting best limits
 .kol-1-1.center[
 .width-100[![HistFactory_uses](figures/HistFactory_result_examples.png)]
 ]
+.kol-1-3.center[
+.bold[Standard Model]
+]
+.kol-1-3.center[
+.bold[Supersymmetry]
+]
+.kol-1-3.center[
+.bold[Exotic Physics]
+]
 
 ---
 # HistFactory Template
