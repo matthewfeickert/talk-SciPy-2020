@@ -203,11 +203,30 @@ class: middle
 Remove this later
 
 ---
+# Performance seciton notes
+
+- From watching the [`Freud` SciPy 2019 talk](https://youtu.be/D0LWh1BzPRQ) it is probably totally fine to show much more detailed examples of what is actually happening with the shim layers
+
+---
 class: middle
 
 # Model specification
 
 Remove this later
+
+---
+# Publications using pyhf
+
+.kol-1-2.center.width-95[
+.center.width-70[[![arxViv_header](figures/arXiv_1810-05648_header.png)](https://inspirehep.net/record/1698425)]
+
+.center.width-40[[![arxViv_tweet_GIF](figures/pyhf_arXiv.gif)](https://twitter.com/lukasheinrich_/status/1052142936803160065)]
+]
+.kol-1-2.center.width-95[
+.center.width-100[[![ATLAS_PUB_Note_title](figures/ATLAS_PUB_Note_title.png)](https://cds.cern.ch/record/2684863)]
+
+.center.width-100[[![CERN_news_story](figures/CERN_news_story.png)](https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way)]
+]
 
 ---
 class: middle
