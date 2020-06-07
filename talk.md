@@ -242,22 +242,22 @@ Remove this later
 <!--  -->
 .kol-1-1[
 .kol-1-2.center[
-.width-90[![carbon_normal_dist_numpy](figures/carbon_normal_dist_numpy.png)]
+.width-90[[![carbon_normal_dist_numpy](figures/carbon_normal_dist_numpy.png)](https://scikit-hep.org/pyhf/_generated/pyhf.tensor.numpy_backend.numpy_backend.html#pyhf.tensor.numpy_backend.numpy_backend.normal_dist)]
 
 NumPy
 ]
 .kol-1-2.center[
-.width-90[![carbon_normal_dist_jax](figures/carbon_normal_dist_jax.png)]
+.width-90[[![carbon_normal_dist_jax](figures/carbon_normal_dist_jax.png)](https://scikit-hep.org/pyhf/_generated/pyhf.tensor.jax_backend.jax_backend.html#pyhf.tensor.jax_backend.jax_backend.normal_dist)]
 <br>JAX
 ]
 ]
 .kol-1-1[
 .kol-1-2.center[
-.width-95[![carbon_normal_dist_tensorflow](figures/carbon_normal_dist_tensorflow.png)]
+.width-95[[![carbon_normal_dist_tensorflow](figures/carbon_normal_dist_tensorflow.png)](https://scikit-hep.org/pyhf/_generated/pyhf.tensor.tensorflow_backend.tensorflow_backend.html#pyhf.tensor.tensorflow_backend.tensorflow_backend.normal_dist)]
 <br>Tensorflow
 ]
 .kol-1-2.center[
-.width-95[![carbon_normal_dist_pytorch](figures/carbon_normal_dist_pytorch.png)]
+.width-95[[![carbon_normal_dist_pytorch](figures/carbon_normal_dist_pytorch.png)](https://scikit-hep.org/pyhf/_generated/pyhf.tensor.pytorch_backend.pytorch_backend.html#pyhf.tensor.pytorch_backend.pytorch_backend.normal_dist)]
 <br>PyTorch
 ]
 ]
