@@ -180,7 +180,7 @@ $$
    - encoding systematic uncertainties (normalization, shape, etc)
 
 <br>
-.center[.bold[Until now], the only implementation of HistFactory has been in a monolithic `C++` library used in HEP]
+.center[.bold[Until now], the only implementation of HistFactory has been in a monolithic `C++` library used in HEP (`ROOT`)]
 
 .bold[Challenges]
 - Preservation: Likelihood stored in a domain specific binary format
