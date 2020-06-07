@@ -208,6 +208,36 @@ Remove this later
 - From watching the [`Freud` SciPy 2019 talk](https://youtu.be/D0LWh1BzPRQ) it is probably totally fine to show much more detailed examples of what is actually happening with the shim layers
 
 ---
+# Machine Learning Frameworks for Computation
+
+.grid[
+.kol-2-3[
+- All numerical operations implemented in .bold[tensor backends] through an API of $n$-dimensional array operations
+- Using deep learning frameworks as computational backends allows for .bold[exploitation of auto differentiation (autograd) and GPU acceleration]
+- As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers
+
+.kol-1-2.center[
+.width-90[![scaling_hardware](figures/scaling_hardware_annotated.png)]
+]
+.kol-1-2[
+- Preliminary results
+- Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
+- Hardware acceleration benchmarking planned
+- Improvements over traditional
+   - 10 hrs to 30 min; 20 min to 10 sec
+]
+]
+.kol-1-4.center[
+.width-85[![NumPy](figures/logos/NumPy_logo.svg)]
+.width-85[![PyTorch](figures/logos/Pytorch_logo.svg)]
+.width-85[![Tensorflow](figures/logos/TensorFlow_logo.svg)]
+
+<br>
+.width-50[![JAX](figures/logos/JAX_logo.png)]
+]
+]
+
+---
 class: middle
 
 # Model specification
