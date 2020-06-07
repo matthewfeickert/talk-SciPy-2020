@@ -259,7 +259,7 @@ class: middle
 .kol-1-3.center[
 <br>
 <br>
-.width-90[[![iris-hep_logo](https://iris-hep.org/assets/logos/Iris-hep-4-no-long-name.png)](https://iris-hep.org/)]
+.width-100[[![iris-hep_logo](figures/iris-hep-4-no-long-name.png)](https://iris-hep.org/)]
 ]
 ]
 
