@@ -23,6 +23,7 @@ July 7th, 2020
 - .bold[SciPy talks are generally 25 minutes] with 2-3 minutes for questions. Please keep the length of time in mind as you structure your outline.
 - Your talk should not be a commercial for your company’s product. However, you are welcome to talk about how your company solved a problem, or notable open-source projects that may benefit attendees.
 - .bold[NONE OF THESE PEOPLE KNOW WHAT PARTICLE PHYSICS IS]
+   - Remove usage of "Standard Model" or BSM
 
 ---
 class: middle
@@ -119,24 +120,15 @@ Provide constraints on models through setting best limits
 - .blue[Goal:] Empower analysts with fast fits and expressive models
 
 ---
-# Why is the likelihood important?
+# HistFactory Model
 
-<br>
+- A flexible probability density function (p.d.f.) template to build binned statistical models
+- Developed during work that lead to the Higgs discovery in 2011 [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
+- Widely used by the high energy physics (HEP) community for .bold[measurements of known physics] (Standard Model) and .bold[searches for new physics] (beyond the Standard Model)
 
-.kol-1-2.width-90[
-- High information-density summary of analysis
-- Almost everything we do in the analysis ultimately affects the likelihood and is encapsulated in it
-   - Trigger
-   - Detector
-   - Systematic Uncertainties
-   - Event Selection
-- Unique representation of the analysis to preserve
+.kol-1-1.center[
+.width-100[![HistFactory_uses](figures/HistFactory_result_examples.png)]
 ]
-.kol-1-2.width-90[
-<br><br><br>
-[![likelihood_connections](figures/likelihood_connections.png)](https://indico.cern.ch/event/839382/contributions/3521168/)
-]
-
 
 ---
 # HistFactory Template
@@ -261,6 +253,24 @@ class: end-slide, center
 
 Backup
 
+---
+# Why is the likelihood important?
+
+<br>
+
+.kol-1-2.width-90[
+- High information-density summary of analysis
+- Almost everything we do in the analysis ultimately affects the likelihood and is encapsulated in it
+   - Trigger
+   - Detector
+   - Systematic Uncertainties
+   - Event Selection
+- Unique representation of the analysis to preserve
+]
+.kol-1-2.width-90[
+<br><br><br>
+[![likelihood_connections](figures/likelihood_connections.png)](https://indico.cern.ch/event/839382/contributions/3521168/)
+]
 
 ---
 # References
