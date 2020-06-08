@@ -175,11 +175,12 @@ $$
 
 .center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
 
-- .blue[Main Poisson p.d.f. for simultaneous measurement of multiple channels]
-- .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
-   - encoding systematic uncertainties (normalization, shape, etc)
+Basic structure: simultaneous fit to
 
-<br>
+- .blue[multiple "channels"] (analysis regions, (stacks of) histograms)
+- each region can have .blue[multiple bins]
+- coupled to a set of .red[constraint terms]
+
 .center[.bold[Until now], the only implementation of HistFactory has been in a monolithic `C++` library used in HEP (`ROOT`)]
 
 .bold[Challenges]
