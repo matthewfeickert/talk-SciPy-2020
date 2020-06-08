@@ -50,6 +50,19 @@ body {
     color: #cbbaed;
 }
 
+/* https://imagecolorpicker.com/en/ */
+.pars_blue {
+    color: #73bbe6;
+}
+
+.data_green {
+    color: #a5dc92;
+}
+
+.value_orange {
+    color: #ddc16c;
+}
+
 .Q {
     color: #009933;
 }

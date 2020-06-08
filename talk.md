@@ -213,14 +213,13 @@ $$
 .grid[
 .kol-1-3[
 <br>
-<br>
-<br>
-the bottom node is the final log likelihood value
-<br>
+- Each node of the graph represents a vectorized n-dimensional array ("tensorized") operation
+- The graph (model) is largely factorized between the .pars_blue[parameter] graph and the .data_green[data] graph
+- The bottom node is the final log likelihood .value_orange[value]
 <br>
 <br>
 $$
-\texttt{\textcolor{green}{value} = model.logpdf(\textcolor{blue}{parameters}, \textcolor{red}{data})}
+\texttt{\textcolor{#ddc16c}{value} = model.logpdf(\textcolor{#73bbe6}{parameters}, \textcolor{#a5dc92}{data})}
 $$
 ]
 .kol-2-3[
