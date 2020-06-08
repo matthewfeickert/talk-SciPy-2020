@@ -261,6 +261,27 @@ NumPy
 .center.width-100[![carbon_change_backend](figures/carbon_change_backend.png)]
 
 ---
+# Automatic differentiation
+
+With tensor library backends gain access to _exact (higher order) derivatives_ &mdash; accuracy is only limited by floating point precision
+
+$$
+\frac{\partial L}{\partial \mu}, \frac{\partial L}{\partial \theta_{i}}
+$$
+
+.grid[
+.kol-1-2[
+.large[Exploit .bold[full gradient of the likelihood] with .bold[modern optimizers] to help speedup fit!]
+
+<br><br>
+.large[Gain this through the frameworks creating _computational directed acyclic graphs_ and then applying the chain rule (to the operations)]
+]
+.kol-1-2[
+.center.width-80[![DAG](figures/computational_graph.png)]
+]
+]
+
+---
 class: middle
 
 # Model specification
