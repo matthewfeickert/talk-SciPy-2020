@@ -189,6 +189,60 @@ Basic structure: simultaneous fit to
 - Difficult to use for reinterpretation
 
 ---
+# Basic object of HistFactory is the statistical model
+
+$$
+f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
+$$
+
+.center[care about log likelihood as using maximum likelihood fits]
+
+$$
+\ln L \left(\vec{\theta} \\,\middle| \vec{x}\right) \Rightarrow \texttt{model.logpdf(parameters, data)}
+$$
+
+.center.width-100[![carbon_logpdf_example.png](figures/carbon_logpdf_example.png)]
+
+---
+# Model is represented as a computational graph
+.grid[
+.kol-1-3[
+<br>
+<br>
+<br>
+the bottom node is the final log likelihood value
+<br>
+<br>
+<br>
+$$
+\texttt{\textcolor{green}{value} = model.logpdf(\textcolor{blue}{parameters}, \textcolor{red}{data})}
+$$
+]
+.kol-2-3[
+.center.width-90[![DAG](figures/computational_graph.png)]
+]
+]
+
+---
+# Core task: Maximum likelihood fits
+
+$$
+\texttt{pyhf.infer.mle.fit(data, model)}
+$$
+
+.center[minimizes the objective function $-2\ln L \left(\vec{\theta} \\,\middle| \vec{x}\right)$ with the backend's optimizer]
+<br>
+
+.center.width-100[![carbon_mle_fit_example](figures/carbon_mle_fit_example.png)]
+
+---
+# Used in profile likelihood fits
+
+$$
+-2\ln \Lambda (\mu) = - 2\frac{L(\mu, \hat{\hat{\theta}})}{L(\hat{\mu}, \hat{\theta})}
+$$
+
+---
 class: middle
 
 # Performance gain through tensorization
