@@ -173,14 +173,13 @@ $$
 f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
 $$
 
-.center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
-
 Basic structure: simultaneous fit to
 
 - .blue[multiple "channels"] (analysis regions, (stacks of) histograms)
 - each region can have .blue[multiple bins]
 - coupled to a set of .red[constraint terms]
 
+.center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
 .center[.bold[Until now], the only implementation of HistFactory has been in a monolithic `C++` library used in HEP (`ROOT`)]
 
 .bold[Challenges]
