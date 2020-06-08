@@ -189,6 +189,11 @@ Basic structure: simultaneous fit to
 - Difficult to use for reinterpretation
 
 ---
+# Enter `pyhf`
+
+.center.width-60[![pyhf_PyPI](figures/pyhf_PyPI.png)]
+
+---
 # Basic object of HistFactory is the statistical model
 
 $$
