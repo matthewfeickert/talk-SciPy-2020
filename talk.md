@@ -263,6 +263,11 @@ NumPy
 ]
 
 ---
+# Allows for transparently changing backend
+
+.center.width-100[![carbon_change_backend](figures/carbon_change_backend.png)]
+
+---
 class: middle
 
 # Model specification
