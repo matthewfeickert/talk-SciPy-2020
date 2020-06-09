@@ -241,7 +241,27 @@ td {
   border-style: dashed;
 }
 
-.width-5 * {
+.width-01 * {
+    width: 1%;
+}
+
+.width-015 * {
+    width: 1.5%;
+}
+
+.width-02 * {
+    width: 2%;
+}
+
+.width-03 * {
+    width: 3%;
+}
+
+.width-04 * {
+    width: 4%;
+}
+
+.width-05 * {
     width: 5%;
 }
 
