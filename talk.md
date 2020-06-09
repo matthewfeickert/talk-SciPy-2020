@@ -26,13 +26,6 @@ July 7th, 2020
    - Remove usage of "Standard Model" or BSM
 
 ---
-class: middle
-
-# Introduction and Motivation
-
-Remove this later
-
----
 # `pyhf` core dev team
 
 <br>
@@ -247,13 +240,6 @@ $$
 .center.width-70[![carbon_hypotest_example](figures/carbon_hypotest_example.png)]
 
 ---
-class: middle
-
-# Model specification
-
-Remove this later
-
----
 # JSON spec fully describes the HistFactory model
 
 .kol-1-4.width-100[
@@ -326,18 +312,6 @@ Remove this later
 .kol-1-2.right.width-70[
 [![discrepancy](figures/discrepancy.png)](https://cds.cern.ch/record/2684863)
 ]
-
----
-class: middle
-
-# Performance gain through tensorization
-
-Remove this later
-
----
-# Performance section notes
-
-- From watching the [`Freud` SciPy 2019 talk](https://youtu.be/D0LWh1BzPRQ) it is probably totally fine to show much more detailed examples of what is actually happening with the shim layers
 
 ---
 # Machine Learning Frameworks for Computation
@@ -433,13 +407,6 @@ $$
 
 .center.width-100[[![CERN_news_story](figures/CERN_news_story.png)](https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way)]
 ]
-
----
-class: middle
-
-# Conclusions
-
-Remove this later
 
 ---
 # Summary
