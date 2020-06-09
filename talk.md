@@ -275,14 +275,10 @@ Remove this later
 ]
 
 ---
-# Likelihood serialization and reproduction
-<!--  -->
-- ATLAS note on the JSON schema for serialization and reproduction of results [[ATL-PHYS-PUB-2019-029](https://cds.cern.ch/record/2684863)]
-   - Contours: .root[█] original ROOT+XML, .pyhf[█] pyhf JSON, .roundtrip[█] JSON converted back to ROOT+XML
-<!--  -->
-.right.width-80[
-[![flowchart](figures/process.svg)](https://cds.cern.ch/record/2684863)
-]
+# JSON patch allows for background + patchset
+
+---
+# patchset allows for full likelihood to be reconstructed
 
 ---
 # Likelihood serialization and reproduction
@@ -484,6 +480,16 @@ Backup
 .kol-1-2.width-90[
 <br><br><br>
 [![likelihood_connections](figures/likelihood_connections.png)](https://indico.cern.ch/event/839382/contributions/3521168/)
+]
+
+---
+# Likelihood serialization and reproduction
+<!--  -->
+- ATLAS note on the JSON schema for serialization and reproduction of results [[ATL-PHYS-PUB-2019-029](https://cds.cern.ch/record/2684863)]
+   - Contours: .root[█] original ROOT+XML, .pyhf[█] pyhf JSON, .roundtrip[█] JSON converted back to ROOT+XML
+<!--  -->
+.right.width-80[
+[![flowchart](figures/process.svg)](https://cds.cern.ch/record/2684863)
 ]
 
 ---
