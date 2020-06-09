@@ -275,10 +275,41 @@ Remove this later
 ]
 
 ---
-# JSON patch allows for background + patchset
+# JSON Patch for signal model (reinterpretation)
+<!--  -->
+.center[JSON Patch gives ability to .bold[swap signal models]!]
+.center[Allows for .bold[separating] the background model from the signal model]
+.center[(think scans in parameter space)]
+<!--  -->
+.kol-1-5[
+<br>
+<br>
+<br>
+<br>
+.center.width-100[![reinterpretation_cartoon](figures/reinterpretation_cartoon.png)]
+.center[Signal model A]
+]
+.kol-3-5[
+<!-- Using Perl style in Carbon -->
+.center.width-100[![signal_reinterpretation](figures/carbon_reinterpretation.png)]
+]
+.kol-1-5[
+<br>
+<br>
+<br>
+<br>
+.center.width-100[![measurement_cartoon](figures/measurement_cartoon.png)]
+.center[Signal model B]
+]
 
 ---
-# patchset allows for full likelihood to be reconstructed
+# Allows for analysis preservation and reuse
+
+- Background-only model JSON stored
+- Hundreds of signal model JSON Patches stored together as a patch file
+- Together are able to fully preserve the full model (with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v2%2Fr2-blue.svg)](https://doi.org/10.17182/hepdata.90607.v2/r2)] )
+
+[.center.width-70[![HEPData_likelihoods](figures/HEPData_likelihoods.png)]](https://www.hepdata.net/record/ins1748602)
 
 ---
 # Likelihood serialization and reproduction
