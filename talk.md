@@ -295,7 +295,7 @@ $$
 # Allows for analysis preservation and reuse
 
 - Background-only model JSON stored
-- Hundreds of signal model JSON Patches stored together as a patch file
+- Hundreds of signal model JSON Patches stored together as a "patch set" file
 - Together are able to fully preserve the full model (with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v2%2Fr2-blue.svg)](https://doi.org/10.17182/hepdata.90607.v2/r2)] )
 
 [.center.width-70[![HEPData_likelihoods](figures/HEPData_likelihoods.png)]](https://www.hepdata.net/record/ins1748602)
