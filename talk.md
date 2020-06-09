@@ -23,6 +23,9 @@ July 7th, 2020
 - .bold[SciPy talks are generally 25 minutes] with 2-3 minutes for questions. Please keep the length of time in mind as you structure your outline.
 - Your talk should not be a commercial for your company’s product. However, you are welcome to talk about how your company solved a problem, or notable open-source projects that may benefit attendees.
 - .bold[NONE OF THESE PEOPLE KNOW WHAT PARTICLE PHYSICS IS]
+- Accepted abstract is here: https://github.com/matthewfeickert/SciPy2020-Proposal
+   - Use abstract as outline
+- [In general track](https://na.eventscloud.com/ehome/487022?&t=d2917a15274e1daf79d80a4253f01e7a)...so think about how this talk will align
 
 ---
 # `pyhf` core dev team
