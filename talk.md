@@ -176,7 +176,7 @@ Basic structure: simultaneous fit to
 - coupled to a set of .red[constraint terms]
 
 .center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
-.center[.bold[Until now], the only implementation of HistFactory has been in a monolithic `C++` library used in HEP (`ROOT`)]
+.center[.bold[Until now] (2018), the only implementation of HistFactory has been in a monolithic `C++` library used in HEP (`ROOT`)]
 
 .bold[`pyhf`: HistFactory in pure Python]
 .center.width-70[[![pyhf_PyPI](figures/pyhf_PyPI.png)](https://pypi.org/project/pyhf/)]
