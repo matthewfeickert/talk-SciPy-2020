@@ -317,9 +317,13 @@ $$
 ]
 
 ---
-# Insert GIF/Movie of fitting on Google Cloud
+# Further speed up by parallelizing across cluster
 
-TODO
+.center[Fit of same likelihood now takes .bold[3 minutes] for all signal points!]
+
+<!-- .center.width-45[[![plot_countour](plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)] -->
+.center.width-45[[![plot_countour](http://www.cern.ch/feickert/talks/plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)]
+.center.small[(GIF sped up by 8x)]
 
 ---
 # Machine Learning Frameworks for Computation
