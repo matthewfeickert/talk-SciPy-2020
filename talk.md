@@ -23,7 +23,6 @@ July 7th, 2020
 - .bold[SciPy talks are generally 25 minutes] with 2-3 minutes for questions. Please keep the length of time in mind as you structure your outline.
 - Your talk should not be a commercial for your company’s product. However, you are welcome to talk about how your company solved a problem, or notable open-source projects that may benefit attendees.
 - .bold[NONE OF THESE PEOPLE KNOW WHAT PARTICLE PHYSICS IS]
-   - Remove usage of "Standard Model" or BSM
 
 ---
 # `pyhf` core dev team
@@ -303,7 +302,7 @@ $$
 - ATLAS note on the JSON schema for serialization and reproduction of results [[ATL-PHYS-PUB-2019-029](https://cds.cern.ch/record/2684863)]
    - Contours: .root[█] original ROOT+XML, .pyhf[█] pyhf JSON, .roundtrip[█] JSON converted back to ROOT+XML
       - Overlay of expected limit **contours** (hatching) and observed **lines** nice visualization of near perfect agreement
-   - Serialized likelihood and reproduced results of ATLAS Run-2 search for sbottom quarks [[JHEP12(2019)060](http://inspirehep.net/record/1748602)] and published to HEPData
+   - Serialized likelihood and reproduced results of ATLAS Run-2 search for bottom-squarks [[JHEP12(2019)060](http://inspirehep.net/record/1748602)] and published to HEPData
    - Shown to reproduce results but faster! .bold[ROOT:] 10+ hours .bold[pyhf:] < 30 minutes
 
 .kol-1-2.center.width-95[
@@ -314,21 +313,25 @@ $$
 ]
 
 ---
+# Insert GIF/Movie of fitting on Google Cloud
+
+TODO
+
+---
 # Machine Learning Frameworks for Computation
 
 .grid[
 .kol-2-3[
 - All numerical operations implemented in .bold[tensor backends] through an API of $n$-dimensional array operations
 - Using deep learning frameworks as computational backends allows for .bold[exploitation of auto differentiation (autograd) and GPU acceleration]
-- As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers
+- As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers (physicists are not)
 
 .kol-1-2.center[
 .width-90[![scaling_hardware](figures/scaling_hardware_annotated.png)]
 ]
 .kol-1-2[
-- Preliminary results
+<br>
 - Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
-- Hardware acceleration benchmarking planned
 - Improvements over traditional
    - 10 hrs to 30 min; 20 min to 10 sec
 ]
@@ -344,7 +347,7 @@ $$
 ]
 
 ---
-# Unified API through shim tensorlib
+# Unified API through `tensorlib` shim
 <!--  -->
 .kol-1-1[
 .kol-1-2.center[
@@ -395,7 +398,7 @@ $$
 ]
 
 ---
-# Publications using pyhf
+# Publications using `pyhf`
 
 .kol-1-2.center.width-95[
 .center.width-70[[![arxViv_header](figures/arXiv_1810-05648_header.png)](https://inspirehep.net/record/1698425)]
@@ -410,25 +413,26 @@ $$
 
 ---
 # Summary
-.kol-1-2[
+.kol-2-3[
 .large[`pyhf` provides:]
-- .large[Accelerated fitting]
-   - .bold[reducing time to insight]!
+- .large[.bold[Accelerated] fitting library]
+   - reducing time to insight/inference!
    - Hardware acceleration on GPUs and vectorized operations
-   - Backend agnostic acceleration
-   - Human acceleration through clean Pythonic API
-- .large[Flexible schema great for open likelihood .bold[preservation]]
+   - Backend agnostic Python API and CLI
+- .large[Flexible .bold[declarative] schema]
    - JSON: ubiquitous, universal support, versionable
-   - Easily describe HistFactory models
-   - First full likelihood from an LHC experiment openly published
 - .large[Enabling technology for .bold[reinterpretation]]
    - JSON Patch files for efficient computation of new signal models
+   - Unifying tool for theoretical and experimental physicists
+- .large[Project in growing .bold[Pythonic HEP ecosystem]]
+   - c.f. Jim Pivarski and Henry Schreiner's talks in High Performance Python track
+   - Ask us about Scikit-HEP and PyHEP!
 ]
-.kol-1-2[
+.kol-1-3[
 <br>
 <br>
 <br>
-.center.width-60[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+.center.width-100[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
 ]
 
 ---
