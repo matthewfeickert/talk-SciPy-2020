@@ -274,7 +274,7 @@ $$
 <br>
 <br>
 <br>
-.center.width-100[![reinterpretation_cartoon](figures/reinterpretation_cartoon.png)]
+.center.width-100[![measurement_cartoon](figures/measurement_cartoon.png)]
 .center[Signal model A]
 ]
 .kol-3-5[
@@ -286,7 +286,7 @@ $$
 <br>
 <br>
 <br>
-.center.width-100[![measurement_cartoon](figures/measurement_cartoon.png)]
+.center.width-100[![reinterpretation_cartoon](figures/reinterpretation_cartoon.png)]
 .center[Signal model B]
 ]
 
