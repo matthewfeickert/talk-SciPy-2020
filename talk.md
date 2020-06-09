@@ -6,12 +6,13 @@ count: false
 
 .center.width-30[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]<br><br>
 .huge.blue[Matthew Feickert]<br>
-<br>
-[matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)<br>
-[@HEPfeickert](https://twitter.com/HEPfeickert)
 
-[SciPy 2020](https://talk-event-url)
+<!-- Provided by fontawesome under the Creative Commons Attribution 4.0 International license https://fontawesome.com/license -->
+.width-02[![email](figures/email.svg)] [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)<br>
+.width-02[![Twitter](figures/twitter.svg)] [@HEPfeickert](https://twitter.com/HEPfeickert)<br>
+.width-02[![GitHub](figures/github.svg)] [matthewfeickert](https://github.com/matthewfeickert)
 
+[SciPy 2020](https://talk-event-url)<br>
 July 7th, 2020
 
 ---
