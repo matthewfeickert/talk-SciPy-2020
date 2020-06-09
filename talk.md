@@ -430,6 +430,12 @@ $$
 ]
 
 ---
+# Use in other fields outside particle physics
+
+.center[.bold[TODO]: Insert Fermi LAT image]
+.center[Fermi LAT data analyzed by L. Heinrich et al.]
+
+---
 # Summary
 .kol-2-3[
 .large[`pyhf` provides:]
