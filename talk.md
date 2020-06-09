@@ -246,7 +246,6 @@ $$
 # JSON spec fully describes the HistFactory model
 
 .kol-1-4.width-100[
-<br>
 - Human & machine readable
 - Industry standard
    - Will be with us forever
@@ -254,6 +253,7 @@ $$
    - Highly portable
    - No lock in
 - Versionable and easily preserved
+   - JSON Schema [describing<br> HistFactory specification](https://scikit-hep.org/pyhf/likelihood.html#bibliography)
    - Attractive for analysis preservation
    - Highly compressible
 ]
