@@ -232,7 +232,7 @@ $$
 .center.width-100[![carbon_mle_fit_example](figures/carbon_mle_fit_example.png)]
 
 ---
-# Used in profile likelihood fits (thing we care about)
+# Use in profile likelihood fits (thing we care about)
 $$
 -2\ln \Lambda (\mu) = - 2\ln\frac{L(\mu, \hat{\\!\hat{\theta}})}{L(\hat{\mu}, \hat{\theta})} \quad \frac{\Leftarrow\textrm{constrained best fit}}{\Leftarrow\textrm{unconstrained best fit}}
 $$
