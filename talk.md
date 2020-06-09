@@ -232,11 +232,19 @@ $$
 .center.width-100[![carbon_mle_fit_example](figures/carbon_mle_fit_example.png)]
 
 ---
-# Used in profile likelihood fits
-
+# Used in profile likelihood fits (thing we care about)
 $$
--2\ln \Lambda (\mu) = - 2\frac{L(\mu, \hat{\hat{\theta}})}{L(\hat{\mu}, \hat{\theta})}
+-2\ln \Lambda (\mu) = - 2\ln\frac{L(\mu, \hat{\\!\hat{\theta}})}{L(\hat{\mu}, \hat{\theta})} \quad \frac{\Leftarrow\textrm{constrained best fit}}{\Leftarrow\textrm{unconstrained best fit}}
 $$
+<!--  -->
+to compute a modified $p$-value called the $\mathrm{CL}_{s}$ for a given parameter of interest $\mu$ &mdash; hypothesis testing!
+$$
+\texttt{pyhf.infer.hypotest(testpoi, data, model)}
+$$
+<!--  -->
+.center[Want this .bold[fast as possible!]]
+<!--  -->
+.center.width-70[![carbon_hypotest_example](figures/carbon_hypotest_example.png)]
 
 ---
 class: middle
