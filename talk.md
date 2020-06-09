@@ -182,16 +182,8 @@ Basic structure: simultaneous fit to
 .center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
 .center[.bold[Until now], the only implementation of HistFactory has been in a monolithic `C++` library used in HEP (`ROOT`)]
 
-.bold[Challenges]
-- Preservation: Likelihood stored in a domain specific binary format
-   - Challenge for long-term preservation
-- To start using HistFactory p.d.f.s first have to learn a whole `C++` framework
-- Difficult to use for reinterpretation
-
----
-# Enter `pyhf`
-
-.center.width-60[[![pyhf_PyPI](figures/pyhf_PyPI.png)](https://pypi.org/project/pyhf/)]
+.bold[`pyhf`: HistFactory in pure Python]
+.center.width-70[[![pyhf_PyPI](figures/pyhf_PyPI.png)](https://pypi.org/project/pyhf/)]
 
 ---
 # Basic object of HistFactory is the statistical model
