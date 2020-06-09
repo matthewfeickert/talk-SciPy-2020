@@ -222,7 +222,7 @@ $$
 \texttt{pyhf.infer.mle.fit(data, model)}
 $$
 
-.center[minimizes the objective function $-2\ln L \left(\vec{\theta} \\,\middle| \vec{x}\right)$ with the backend's optimizer]
+.center[minimizes the objective function $-2\ln L \left(\vec{\theta} \\,\middle| \vec{x}\right)$ (maximizing the likelihood) with the backend's optimizer]
 <br>
 
 .center.width-100[![carbon_mle_fit_example](figures/carbon_mle_fit_example.png)]
