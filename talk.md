@@ -319,11 +319,21 @@ $$
 ---
 # Further speed up by parallelizing across cluster
 
-.center[Fit of same likelihood now takes .bold[3 minutes] for all signal points!]
-
+.kol-1-3[
+<br>
+- Running across 25 worker nodes on the cloud
+- Background and signal patches are sent to workers on demand
+   - Possible as the signal patches don't need information from each other
+   - Embarrassingly parallelizable
+- Results being plotted as they are streamed back
+- Fit of same likelihood now takes .bold[3 minutes] for all signal points!
+]
+.kol-2-3[
+<!-- https://github.com/lukasheinrich/lhoodbinder2 -->
 <!-- .center.width-45[[![plot_countour](plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)] -->
-.center.width-45[[![plot_countour](http://www.cern.ch/feickert/talks/plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)]
+.center.width-70[[![plot_countour](http://www.cern.ch/feickert/talks/plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)]
 .center.small[(GIF sped up by 8x)]
+]
 
 ---
 # Machine Learning Frameworks for Computation
