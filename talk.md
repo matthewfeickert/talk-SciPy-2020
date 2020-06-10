@@ -160,7 +160,7 @@ $$
 f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
 $$
 
-Basic structure: simultaneous fit to
+Mathematical grammar for a simultaneous fit with
 
 - .blue[multiple "channels"] (analysis regions, (stacks of) histograms)
 - each region can have .blue[multiple bins]
