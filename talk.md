@@ -118,9 +118,9 @@ Provide constraints on models through setting best limits
 ---
 # HistFactory Model
 
-- A flexible probability density function (p.d.f.) template to build binned statistical models
+- A flexible probability density function (p.d.f.) template to build statistical models in high energy physics (HEP)
 - Developed during work that lead to the Higgs discovery in 2011 [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
-- Widely used by the high energy physics (HEP) community for .bold[measurements of known physics] (Standard Model) and .bold[searches for new physics] (beyond the Standard Model)
+- Widely used by the HEP community for .bold[measurements of known physics] (Standard Model) and<br> .bold[searches for new physics] (beyond the Standard Model)
 
 .kol-2-8.center[
 <br>
