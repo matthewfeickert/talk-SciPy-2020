@@ -122,24 +122,13 @@ Provide constraints on models through setting best limits
 - Developed during work that lead to the Higgs discovery in 2011 [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
 - Widely used by the HEP community for .bold[measurements of known physics] (Standard Model) and<br> .bold[searches for new physics] (beyond the Standard Model)
 
-.kol-2-8.center[
-<br>
-.width-100[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
-<br>
+.kol-2-5.center[
+.width-90[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
 .bold[Standard Model]
 ]
-.kol-3-8.center[
-<br>
+.kol-3-5.center[
 .width-100[[![SUSY-2016-16](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
-<br>
-<br>
-.bold[Supersymmetry]
-]
-.kol-3-8.center[
-<br>
-.width-100[[![EXOT-2016-25](figures/EXOT-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2016-25/)]
-<br>
-.bold[Exotic Physics]
+.bold[Beyond the Standard Model]
 ]
 
 ---
