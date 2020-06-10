@@ -292,6 +292,21 @@ $$
 [.center.width-70[![HEPData_likelihoods](figures/HEPData_likelihoods.png)]](https://www.hepdata.net/record/ins1748602)
 
 ---
+# Allows for analysis preservation and reuse
+
+- Background-only model JSON stored
+- Hundreds of signal model JSON Patches stored together as a "patch set" file
+- Together are able to publish and fully preserve the full likelihood (with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v2%2Fr2-blue.svg)](https://doi.org/10.17182/hepdata.90607.v2/r2)] )
+- First .bold[ever] full likelihood of an LHC experiment published in 2019
+
+.center[Solves technical problem of distribution and made good on a [19(!) year old agreement to publish likelihoods](https://indico.cern.ch/event/746178/contributions/3396797/)]
+
+.center.width-95[
+[![likelihood_publishing_agreement](figures/likelihood_publishing_agreement.png)](https://cds.cern.ch/record/411537)
+.center[([1st Workshop on Confidence Limits, CERN, 2000](http://inspirehep.net/record/534129))]
+]
+
+---
 # Likelihood serialization and reproduction
 <!--  -->
 - ATLAS note on the JSON schema for serialization and reproduction of results [[ATL-PHYS-PUB-2019-029](https://cds.cern.ch/record/2684863)]
