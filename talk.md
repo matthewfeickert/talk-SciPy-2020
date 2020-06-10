@@ -237,7 +237,7 @@ $$
 # JSON spec fully describes the HistFactory model
 
 .kol-1-4.width-100[
-- Human & machine readable
+- Human & machine readable .bold[declarative] statistical models
 - Industry standard
    - Will be with us forever
 - Parsable by every language
