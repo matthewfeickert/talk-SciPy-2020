@@ -219,19 +219,19 @@ $$
 .center.width-100[![carbon_mle_fit_example](figures/carbon_mle_fit_example.png)]
 
 ---
-# Use in profile likelihood fits (thing we care about)
+# Use in profile likelihood fits to ask
+<!--  -->
+.center.bold.blue["Given our model and the data, did we discover new physics?"]
 $$
 -2\ln \Lambda (\mu) = - 2\ln\frac{L(\mu, \hat{\\!\hat{\theta}})}{L(\hat{\mu}, \hat{\theta})} \quad \frac{\Leftarrow\textrm{constrained best fit}}{\Leftarrow\textrm{unconstrained best fit}}
 $$
 <!--  -->
-to compute a modified $p$-value called the $\mathrm{CL}_{s}$ for a given parameter of interest $\mu$ &mdash; hypothesis testing!
+.center[compute (.bold[fast as possible!]) modified $p$-value (the $\mathrm{CL}_{s}$) for a given parameter of interest $\mu$ &mdash; hypothesis testing!]
 $$
 \texttt{pyhf.infer.hypotest(testpoi, data, model)}
 $$
 <!--  -->
-.center[Want this .bold[fast as possible!]]
-<!--  -->
-.center.width-70[![carbon_hypotest_example](figures/carbon_hypotest_example.png)]
+.center.width-65[![carbon_hypotest_example](figures/carbon_hypotest_example.png)]
 
 ---
 # JSON spec fully describes the HistFactory model
