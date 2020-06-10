@@ -257,9 +257,9 @@ $$
 ---
 # JSON Patch for signal model (reinterpretation)
 <!--  -->
-.center[JSON Patch gives ability to .bold[swap signal models]!]
-.center[Allows for .bold[separating] the background model from the signal model]
-.center[(think scans in parameter space)]
+.center[JSON Patch gives ability to .bold[easily mutate model]]
+<br>
+.center[Think: test a .bold[new theory] with a .bold[new patch]!]
 <!--  -->
 .kol-1-5[
 <br>
