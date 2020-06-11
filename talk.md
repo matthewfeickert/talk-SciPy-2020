@@ -277,11 +277,10 @@ $$
 - Hundreds of signal model JSON Patches stored together as a "patch set" file
 - Together are able to publish and fully preserve the full likelihood (with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v2%2Fr2-blue.svg)](https://doi.org/10.17182/hepdata.90607.v2/r2)] )
 - Shown to reproduce results but faster! .bold[C++ (ROOT):] 10+ hours .bold[pyhf:] < 30 minutes
-.kol-2-3[
+.kol-3-5[
 [.center.width-100[![HEPData_likelihoods](figures/HEPData_likelihoods.png)]](https://www.hepdata.net/record/ins1748602)
 ]
-.kol-1-3[
-<br>
+.kol-2-5[
 <br>
 .center.width-100[[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)]
 ]
