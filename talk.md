@@ -271,43 +271,35 @@ $$
 ]
 
 ---
-# Allows for analysis preservation and reuse
+# Likelihood serialization and reproduction/reuse
 
 - Background-only model JSON stored
 - Hundreds of signal model JSON Patches stored together as a "patch set" file
 - Together are able to publish and fully preserve the full likelihood (with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v2%2Fr2-blue.svg)](https://doi.org/10.17182/hepdata.90607.v2/r2)] )
-
-[.center.width-70[![HEPData_likelihoods](figures/HEPData_likelihoods.png)]](https://www.hepdata.net/record/ins1748602)
+- Shown to reproduce results but faster! .bold[C++ (ROOT):] 10+ hours .bold[pyhf:] < 30 minutes
+.kol-2-3[
+[.center.width-100[![HEPData_likelihoods](figures/HEPData_likelihoods.png)]](https://www.hepdata.net/record/ins1748602)
+]
+.kol-1-3[
+<br>
+<br>
+.center.width-100[[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)]
+]
 
 ---
-# Allows for analysis preservation and reuse
+# Likelihood serialization and reproduction/reuse
 
 - Background-only model JSON stored
 - Hundreds of signal model JSON Patches stored together as a "patch set" file
 - Together are able to publish and fully preserve the full likelihood (with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v2%2Fr2-blue.svg)](https://doi.org/10.17182/hepdata.90607.v2/r2)] )
 - First .bold[ever] full likelihood of an LHC experiment published in 2019
+   - ATLAS Run-2 search for bottom-squarks [[JHEP12(2019)060](http://inspirehep.net/record/1748602)]
 
 .center[Solves technical problem of distribution and made good on a [19(!) year old agreement to publish likelihoods](https://indico.cern.ch/event/746178/contributions/3396797/)]
 
 .center.width-95[
 [![likelihood_publishing_agreement](figures/likelihood_publishing_agreement.png)](https://cds.cern.ch/record/411537)
 .center[([1st Workshop on Confidence Limits, CERN, 2000](http://inspirehep.net/record/534129))]
-]
-
----
-# Likelihood serialization and reproduction
-<!--  -->
-- ATLAS note on the JSON schema for serialization and reproduction of results [[ATL-PHYS-PUB-2019-029](https://cds.cern.ch/record/2684863)]
-   - Contours: .root[█] original ROOT+XML, .pyhf[█] pyhf JSON, .roundtrip[█] JSON converted back to ROOT+XML
-      - Overlay of expected limit **contours** (hatching) and observed **lines** nice visualization of near perfect agreement
-   - Serialized likelihood and reproduced results of ATLAS Run-2 search for bottom-squarks [[JHEP12(2019)060](http://inspirehep.net/record/1748602)] and published to HEPData
-   - Shown to reproduce results but faster! .bold[C++ (ROOT):] 10+ hours .bold[pyhf:] < 30 minutes
-
-.kol-1-2.center.width-95[
-[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)
-]
-.kol-1-2.right.width-70[
-[![discrepancy](figures/discrepancy.png)](https://cds.cern.ch/record/2684863)
 ]
 
 ---
@@ -538,6 +530,22 @@ $$
 <!--  -->
 .right.width-80[
 [![flowchart](figures/process.svg)](https://cds.cern.ch/record/2684863)
+]
+
+---
+# Likelihood serialization and reproduction
+<!--  -->
+- ATLAS note on the JSON schema for serialization and reproduction of results [[ATL-PHYS-PUB-2019-029](https://cds.cern.ch/record/2684863)]
+   - Contours: .root[█] original ROOT+XML, .pyhf[█] pyhf JSON, .roundtrip[█] JSON converted back to ROOT+XML
+      - Overlay of expected limit **contours** (hatching) and observed **lines** nice visualization of near perfect agreement
+   - Serialized likelihood and reproduced results of ATLAS Run-2 search for bottom-squarks [[JHEP12(2019)060](http://inspirehep.net/record/1748602)] and published to HEPData
+   - Shown to reproduce results but faster! .bold[C++ (ROOT):] 10+ hours .bold[pyhf:] < 30 minutes
+
+.kol-1-2.center.width-95[
+[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)
+]
+.kol-1-2.right.width-70[
+[![discrepancy](figures/discrepancy.png)](https://cds.cern.ch/record/2684863)
 ]
 
 ---
