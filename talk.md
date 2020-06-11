@@ -423,6 +423,7 @@ $$
 - The LAT is a high-energy gamma-ray telescope &mdash; the gamma-ray photons come from extreme cosmological events
 - Can represent the photons counts in the LAT as a binned model
    - Here full-sky map visualized with [`healpy`](https://healpy.readthedocs.io/en/latest/index.html)'s Mollweide projection
+   - Think: 2d histogram with special binning
 ]
 .kol-2-3[
 .center.width-100[![Fermi_LAT](figures/Fermi_LAT.png)]
