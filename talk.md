@@ -33,7 +33,8 @@ CERN
 
 [Matthew Feickert](https://www.matthewfeickert.com/)
 
-Illinois
+University of Illinois<br>
+Urbana-Champaign
 ]
 .kol-1-3.center[
 .circle.width-75[![Giordon](https://avatars0.githubusercontent.com/u/761483)]
