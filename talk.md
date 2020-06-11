@@ -423,10 +423,10 @@ $$
 ]
 
 ---
-# Use in other fields outside particle physics
+# Use in analysis outside of particle physics
 
-.center[.bold[TODO]: Insert Fermi LAT image]
-.center[Fermi LAT data analyzed by L. Heinrich et al.]
+.center.width-65[![Fermi_LAT](figures/Fermi_LAT.png)]
+.center[[Fermi Large Area Telescope (LAT)](https://glast.sites.stanford.edu/) data analyzed by L. Heinrich et al.]
 
 ---
 # Summary
