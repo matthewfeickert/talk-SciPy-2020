@@ -426,8 +426,16 @@ $$
 ---
 # Use in analysis outside of particle physics
 
-.center.width-65[![Fermi_LAT](figures/Fermi_LAT.png)]
-.center[[Fermi Large Area Telescope (LAT)](https://glast.sites.stanford.edu/) data analyzed by L. Heinrich et al.]
+.kol-1-3[
+<br>
+- [Public data](https://fermi.gsfc.nasa.gov/ssc/data/access/) from [Fermi Large Area Telescope (LAT)](https://glast.sites.stanford.edu/) analyzed by L. Heinrich et al.
+- The LAT is a high-energy gamma-ray telescope &mdash; the gamma-ray photons come from extreme cosmological events
+- Can represent the photons counts in the LAT as a binned model
+   - Here full-sky map visualized with [`healpy`](https://healpy.readthedocs.io/en/latest/index.html)'s Mollweide projection
+]
+.kol-2-3[
+.center.width-100[![Fermi_LAT](figures/Fermi_LAT.png)]
+]
 
 ---
 # Summary
