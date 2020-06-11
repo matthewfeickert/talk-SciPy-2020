@@ -192,8 +192,8 @@ $$
 .grid[
 .kol-1-3[
 <br>
-- Each node of the graph represents a vectorized n-dimensional array ("tensorized") operation
-- The graph (model) is largely factorized between the .pars_blue[parameter] graph and the .data_green[data] graph
+- Each node of the graph represents a vectorized<br> $n$-dimensional array ("tensorized") operation
+- The graph (model) is largely factorized between the .pars_blue[parameter] graph and the<br> .data_green[data] graph
 - The bottom node is the final log likelihood .value_orange[value]
 <br>
 <br>
