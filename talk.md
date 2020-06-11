@@ -37,7 +37,7 @@ University of Illinois<br>
 Urbana-Champaign
 ]
 .kol-1-3.center[
-.circle.width-75[![Giordon](https://avatars0.githubusercontent.com/u/761483)]
+.circle.width-75[![Giordon](figures/collaborators/stark.jpg)]
 
 [Giordon Stark](https://github.com/kratsg)
 
