@@ -401,6 +401,14 @@ $$
 ]
 
 ---
+# Tensor backends offer a computational advantage
+
+For visual comparison: the computational graph of the Higgs discovery analysis from the `C++` framework. Image courtesy of Kyle Cranmer.
+
+<br>
+.center.width-100[![Higgs_HistFactory_graph](figures/Higgs_HistFactory_graph.png)]
+
+---
 # Publications using `pyhf`
 
 .kol-1-2.center.width-95[
