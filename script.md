@@ -332,3 +332,74 @@ framework. Zooming out to have it all fit on screen makes it difficult to even s
 of the operations.
 I think this serves as a good visual example of the wins that we get from moving computational complexity
 into tensor dimensionality.
+
+## Slide 22
+
+`pyhf` is already staring to be used in physics publications in the high energy physics
+community.
+What is exciting is that both theorists and experimenalists are using it.
+On the left, you can see a phenomenology paper that used `pyhf` for performing reinterpretation,
+with the GIF below cycling through models,
+and on the right you can see the public note that ATLAS released on the use of public full likelihoods
+for reproduction of results.
+Below that is the CERN news article that was published on open full likelihoods,
+highlighting what a dramatic change it had allowed.
+
+## Slide 23
+
+We'd also like to think that the uses of `pyhf` are not only found inside of high energy
+physics.
+Here we see public data from the Fermi Large Area Telescope analyzed with pyhf in a Jupyter notebook.
+The LAT is a high energy gamma-ray telescope on the
+Fermi Gamma Ray Space Telescope spacecraft used to observed gamma-ray photons coming
+from extreme cosmological events.
+
+We can represent the photon counts in the LAT as a binned model, such that after
+constructing a model in pyhf and performing a maximum likelihood fit the
+results can be visualized with healphy.
+Here we can view the resulting mapping as a two dimensional histogram with
+special binning choices.
+
+While none of the pyhf core dev team works in astrophysics, we're interested to see
+what overlaps might exist for use of `pyhf`.
+
+## Slide 24
+
+In summary, `pyhf` is a statistical library that provides
+accelerated fitting for high energy physics models by exploiting
+tensor libraries as computational backends for vectorized operations, automatic differentiation, and hardware acceleration.
+
+It uses a JSON schema to provide a flexible specification for declarative models
+and through JSON patch is an enabling technology for reinterpretation of physics results.
+
+pyhf is also at the heart of the growing Pythonic ecosystem in high energy physics.
+So let me plug the talks of my Scikit-HEP and IRIS-HEP colleagues, Jim and Henry, who are both
+giving talks in this week in the High Performance Python track --- go check them
+out as they're going to be great!
+Also feel free to ask use any questions about Scikit-HEP or IRIS-HEP!
+
+## Slide 25
+
+Thank you so much for listening to my talk!
+Here I'll note that pyhf is a Scikit-HEP project and I receive support from IRIS-HEP to develop it.
+
+I've been so excited to get to talk with you at SciPy this year and I can say
+on behalf of Lukas, Giordon, and me that we would love to get to talk with you more
+about `pyhf`.
+So please come talk to us and I'm looking forward to the Q&A tomorrow!
+
+## Outro
+
+Finally, I want to thank the SciPy organizers for all that they did this year
+to make this conference happen and make it a success.
+You've done a heroic job and I want to say thank you for giving me an opportunity
+to share our work here with everyone.
+
+Hope to see you all next year.
+
+## Intro
+
+Hi! I'm Matthew Feickert and I'm a particle physicist. I'm
+postdoctoral research associate at the University of Illinois at Urbana-Chmapaign
+where I work on the ATLAS experiment as at the
+Institute for Research and Innovation in Software for High Energy Physics
