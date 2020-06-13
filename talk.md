@@ -452,7 +452,7 @@ For visual comparison: the computational graph of the Higgs discovery analysis f
    - Unifying tool for theoretical and experimental physicists
 - .large[Project in growing .bold[Pythonic HEP ecosystem]]
    - c.f. Jim Pivarski and Henry Schreiner's talks in High Performance Python track
-   - Ask us about Scikit-HEP and PyHEP!
+   - Ask us about Scikit-HEP and IRIS-HEP!
 ]
 .kol-1-3[
 <br>
