@@ -1,3 +1,14 @@
+**NOTE TO CAPTIONER: This is an outline script and not 100% the same as the audio in my
+video. If you need an _exact_ script this will not be useful. However, this is probably greater
+than 90% similar to the final audio.**
+
+## Intro
+
+Hi! I'm Matthew Feickert and I'm a particle physicist. I'm
+postdoctoral research associate at the University of Illinois at Urbana-Chmapaign
+where I work on the ATLAS experiment as at the
+Institute for Research and Innovation in Software for High Energy Physics
+
 ## Slide 2
 
 We're all experimental high energy particle physicists
@@ -394,12 +405,3 @@ Finally, I want to thank the SciPy organizers for all that they did this year
 to make this conference happen and make it a success.
 You've done a heroic job and I want to say thank you for giving me an opportunity
 to share our work here with everyone.
-
-Hope to see you all next year.
-
-## Intro
-
-Hi! I'm Matthew Feickert and I'm a particle physicist. I'm
-postdoctoral research associate at the University of Illinois at Urbana-Chmapaign
-where I work on the ATLAS experiment as at the
-Institute for Research and Innovation in Software for High Energy Physics
