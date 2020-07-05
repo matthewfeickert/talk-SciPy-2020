@@ -1,0 +1,2407 @@
+﻿1
+00:00:03,540 --> 00:00:05,160
+- Hi, I'm Matthew Feickert.
+
+2
+00:00:05,160 --> 00:00:07,640
+I'm a particle physicist and I'm a postdoc
+
+3
+00:00:07,640 --> 00:00:10,350
+at the University of
+Illinois at Urbana-Champaign
+
+4
+00:00:10,350 --> 00:00:11,870
+where I work on the ATLAS experiment
+
+5
+00:00:11,870 --> 00:00:14,620
+as well as for the Institute
+for Research and Innovation
+
+6
+00:00:14,620 --> 00:00:17,100
+in Software for High Energy Physics.
+
+7
+00:00:17,100 --> 00:00:19,170
+And today I'll be talking
+to you about pyhf.
+
+8
+00:00:19,170 --> 00:00:22,150
+Which is a pure Python
+statistical fitting library
+
+9
+00:00:22,150 --> 00:00:24,010
+from the high energy physics community
+
+10
+00:00:24,010 --> 00:00:26,470
+that leverages both
+tensor library backends
+
+11
+00:00:26,470 --> 00:00:28,453
+as well as automatic differentiation.
+
+12
+00:00:29,490 --> 00:00:31,010
+Okay, so before we go any further
+
+13
+00:00:31,010 --> 00:00:32,990
+I first want to take this opportunity
+
+14
+00:00:32,990 --> 00:00:35,870
+to introduce the pyhf
+core development team.
+
+15
+00:00:35,870 --> 00:00:39,410
+So we're Lukas Heinrich,
+who is a postdoc at CERN,
+
+16
+00:00:39,410 --> 00:00:40,500
+I already introduced myself,
+
+17
+00:00:40,500 --> 00:00:41,490
+I am Matthew Feickert,
+
+18
+00:00:41,490 --> 00:00:44,620
+a postdoc at the University of
+Illinois at Urbana Champaign,
+
+19
+00:00:44,620 --> 00:00:46,220
+and then also Giordon Stark
+
+20
+00:00:46,220 --> 00:00:49,730
+who is a postdoc at the University
+of California Santa Cruz.
+
+21
+00:00:49,730 --> 00:00:52,330
+We're all experimental high
+energy particle physicists
+
+22
+00:00:52,330 --> 00:00:54,980
+that work together on an
+experimental collaboration
+
+23
+00:00:54,980 --> 00:00:57,840
+with 3,000 of our closest
+colleagues called ATLAS
+
+24
+00:00:57,840 --> 00:01:00,920
+that's located just outside of
+beautiful Geneva Switzerland
+
+25
+00:01:00,920 --> 00:01:04,540
+at CERN's Large Hadron Collider, the LHC.
+
+26
+00:01:04,540 --> 00:01:06,460
+Here you can see the obligatory picture
+
+27
+00:01:06,460 --> 00:01:09,530
+of the LHC's huge 27
+kilometer circumference
+
+28
+00:01:09,530 --> 00:01:12,120
+drawn over the Swiss French countryside
+
+29
+00:01:12,120 --> 00:01:15,460
+with markers indicating where
+the main experiments reside
+
+30
+00:01:15,460 --> 00:01:18,920
+along the ring about
+100 meters below ground.
+
+31
+00:01:18,920 --> 00:01:20,710
+And our collaboration is formed around
+
+32
+00:01:20,710 --> 00:01:25,050
+the ATLAS detector itself, seen
+here with a T-Rex for scale,
+
+33
+00:01:25,050 --> 00:01:28,290
+which you can think of as a
+cathedral-sized digital camera
+
+34
+00:01:28,290 --> 00:01:31,390
+for recording the events of
+colliding beams of protons
+
+35
+00:01:31,390 --> 00:01:33,600
+from the LHC at almost the speed of light
+
+36
+00:01:33,600 --> 00:01:35,930
+for us to then later analyze.
+
+37
+00:01:35,930 --> 00:01:38,130
+The reason that we're
+smashing protons together
+
+38
+00:01:38,130 --> 00:01:39,760
+at extreme energy densities
+
+39
+00:01:39,760 --> 00:01:42,740
+and looking at the splattered
+remains in our detector
+
+40
+00:01:42,740 --> 00:01:44,050
+is because we want to understand
+
+41
+00:01:44,050 --> 00:01:46,290
+the fundamental forces of the universe,
+
+42
+00:01:46,290 --> 00:01:47,620
+like electromagnetism
+
+43
+00:01:47,620 --> 00:01:49,970
+and the strong and weak nuclear forces,
+
+44
+00:01:49,970 --> 00:01:50,950
+and their interactions
+
+45
+00:01:50,950 --> 00:01:53,660
+with the most elementary
+particles of matter.
+
+46
+00:01:53,660 --> 00:01:55,300
+With a long history of success,
+
+47
+00:01:55,300 --> 00:01:56,770
+we have been able to distill down
+
+48
+00:01:56,770 --> 00:01:58,870
+what we know about the universe so far
+
+49
+00:01:58,870 --> 00:02:00,940
+so that with a little bit of manipulation
+
+50
+00:02:00,940 --> 00:02:04,350
+you can fit it in one equation
+on the side of a coffee cup,
+
+51
+00:02:04,350 --> 00:02:06,830
+but we know that's not the full picture.
+
+52
+00:02:06,830 --> 00:02:08,100
+We're still trying to understand
+
+53
+00:02:08,100 --> 00:02:10,010
+some of the physics we do know about
+
+54
+00:02:10,010 --> 00:02:12,930
+like the Higgs boson we found in 2012,
+
+55
+00:02:12,930 --> 00:02:15,600
+as well as see if we can
+find evidence for new physics
+
+56
+00:02:15,600 --> 00:02:17,360
+like dark matter.
+
+57
+00:02:17,360 --> 00:02:18,840
+So we're trying to ask the universe
+
+58
+00:02:18,840 --> 00:02:21,340
+pretty fundamental
+questions about what it is,
+
+59
+00:02:21,340 --> 00:02:22,790
+but the universe isn't interested
+
+60
+00:02:22,790 --> 00:02:24,720
+in answering them too easily.
+
+61
+00:02:24,720 --> 00:02:27,030
+We have to run our colliders
+for years at a time
+
+62
+00:02:27,030 --> 00:02:29,390
+producing millions of
+collisions per second
+
+63
+00:02:29,390 --> 00:02:32,730
+to try and collect as much
+high-quality data as possible,
+
+64
+00:02:32,730 --> 00:02:34,940
+on the rare events that
+can give us a glimpse
+
+65
+00:02:34,940 --> 00:02:37,490
+as to the missing parts of our picture.
+
+66
+00:02:37,490 --> 00:02:39,150
+When we do analyze all that data,
+
+67
+00:02:39,150 --> 00:02:40,120
+we're looking to extract
+
+68
+00:02:40,120 --> 00:02:42,440
+as much information as possible out of it.
+
+69
+00:02:42,440 --> 00:02:44,140
+We're using it to search for new physics
+
+70
+00:02:44,140 --> 00:02:46,700
+like when we discovered a
+particle that was consistent
+
+71
+00:02:46,700 --> 00:02:51,290
+with the theoretical predictions
+of the Higgs boson in 2012.
+
+72
+00:02:51,290 --> 00:02:53,650
+But we're also using it to
+make precision measurements
+
+73
+00:02:53,650 --> 00:02:55,140
+of the physics we do know about
+
+74
+00:02:55,140 --> 00:02:57,340
+to better understand its properties.
+
+75
+00:02:57,340 --> 00:02:58,910
+So that when we don't find evidence
+
+76
+00:02:58,910 --> 00:03:00,310
+of new physics in our searches
+
+77
+00:03:00,310 --> 00:03:02,850
+we can still provide the
+best limit constraints
+
+78
+00:03:02,850 --> 00:03:05,170
+on different possible theories.
+
+79
+00:03:05,170 --> 00:03:07,530
+All of this requires
+building statistical models
+
+80
+00:03:07,530 --> 00:03:09,550
+and then fitting those models to the data
+
+81
+00:03:09,550 --> 00:03:11,820
+to perform statistical inference.
+
+82
+00:03:11,820 --> 00:03:14,650
+However, the model complexity
+for some of these analyses
+
+83
+00:03:14,650 --> 00:03:17,630
+can be huge, resulting in the
+time to perform these fits
+
+84
+00:03:17,630 --> 00:03:19,220
+being many hours.
+
+85
+00:03:19,220 --> 00:03:20,730
+This is obviously a problem
+
+86
+00:03:20,730 --> 00:03:22,670
+and we want to try and empower analysts,
+
+87
+00:03:22,670 --> 00:03:23,960
+which are ourselves,
+
+88
+00:03:23,960 --> 00:03:26,040
+with fast fits and expressive models
+
+89
+00:03:26,040 --> 00:03:29,600
+so that we can decrease the
+time to inference and insight.
+
+90
+00:03:29,600 --> 00:03:31,320
+We turn now to HistFactory,
+
+91
+00:03:31,320 --> 00:03:33,790
+one of the most extensively
+used statistical models
+
+92
+00:03:33,790 --> 00:03:35,790
+in all of high energy physics.
+
+93
+00:03:35,790 --> 00:03:38,530
+This flexible probability
+density function template
+
+94
+00:03:38,530 --> 00:03:40,890
+was first developed in the
+field as part of the efforts
+
+95
+00:03:40,890 --> 00:03:42,910
+in the search for the Higgs boson.
+
+96
+00:03:42,910 --> 00:03:44,450
+Since the discovery of the Higgs,
+
+97
+00:03:44,450 --> 00:03:46,580
+it's gone on to be used ubiquitously
+
+98
+00:03:46,580 --> 00:03:49,440
+in both measurements of
+known physics processes,
+
+99
+00:03:49,440 --> 00:03:51,106
+that is physics that is described
+
+100
+00:03:51,106 --> 00:03:53,400
+by what we call the Standard Model,
+
+101
+00:03:53,400 --> 00:03:55,240
+as well as searches for new physics,
+
+102
+00:03:55,240 --> 00:03:57,943
+which we refer to as being
+beyond the Standard Model.
+
+103
+00:03:59,030 --> 00:04:01,700
+When we breakdown what the
+HistFactory template is though,
+
+104
+00:04:01,700 --> 00:04:03,670
+we see it has a simple form.
+
+105
+00:04:03,670 --> 00:04:06,260
+Though here we do need to
+introduce some terminology.
+
+106
+00:04:06,260 --> 00:04:08,950
+The terms "channel" and "sample."
+
+107
+00:04:08,950 --> 00:04:10,510
+Here, a channel just means
+
+108
+00:04:10,510 --> 00:04:13,860
+a particular selection
+criteria for the analysis.
+
+109
+00:04:13,860 --> 00:04:15,220
+If you'll allow me to simplify
+
+110
+00:04:15,220 --> 00:04:17,220
+to avoid giving an aside lightning talk
+
+111
+00:04:17,220 --> 00:04:18,230
+on the Standard Model,
+
+112
+00:04:18,230 --> 00:04:21,100
+this might mean requiring
+seeing two particles of one type
+
+113
+00:04:21,100 --> 00:04:23,280
+and a third of another in the detector,
+
+114
+00:04:23,280 --> 00:04:26,810
+and that their combined energy
+lies within a specific range.
+
+115
+00:04:26,810 --> 00:04:28,500
+So, in the plot below,
+
+116
+00:04:28,500 --> 00:04:31,730
+we see that each bin is a
+different analysis region,
+
+117
+00:04:31,730 --> 00:04:32,853
+a different channel.
+
+118
+00:04:33,940 --> 00:04:36,260
+Here there's just one bin in each channel,
+
+119
+00:04:36,260 --> 00:04:38,480
+but that's just this particular example.
+
+120
+00:04:38,480 --> 00:04:41,900
+There are analyses in which
+channels contain many bins.
+
+121
+00:04:41,900 --> 00:04:43,110
+So following that,
+
+122
+00:04:43,110 --> 00:04:46,400
+a sample corresponds to a
+particular physics process
+
+123
+00:04:46,400 --> 00:04:48,560
+that could result in producing particles
+
+124
+00:04:48,560 --> 00:04:51,410
+that would get selected
+for a particular channel.
+
+125
+00:04:51,410 --> 00:04:53,390
+So, each of these colored histograms
+
+126
+00:04:53,390 --> 00:04:55,930
+in the histogram stacks in each bin
+
+127
+00:04:55,930 --> 00:04:58,430
+corresponds to a different sample.
+
+128
+00:04:58,430 --> 00:05:02,090
+So as you can see, some samples
+--- physics processes ---
+
+129
+00:05:02,090 --> 00:05:04,513
+show up in different channels.
+
+130
+00:05:05,600 --> 00:05:07,010
+Okay, given this aside,
+
+131
+00:05:07,010 --> 00:05:09,480
+we can backtrack to see that
+the HistFactory template
+
+132
+00:05:09,480 --> 00:05:12,430
+is just comprised of a main part, in blue,
+
+133
+00:05:12,430 --> 00:05:14,370
+which is the product of
+Poisson distributions
+
+134
+00:05:14,370 --> 00:05:16,680
+across all bins and all channels.
+
+135
+00:05:16,680 --> 00:05:18,820
+Where the event rate
+parameter for the Poisson
+
+136
+00:05:18,820 --> 00:05:20,710
+is determined from the nominal event rate
+
+137
+00:05:20,710 --> 00:05:22,840
+that is affected by
+different multiplicative
+
+138
+00:05:22,840 --> 00:05:25,640
+and additive modifiers in each sample.
+
+139
+00:05:25,640 --> 00:05:27,020
+The reason for using Poissons
+
+140
+00:05:27,020 --> 00:05:28,520
+is that we're doing counting experiments
+
+141
+00:05:28,520 --> 00:05:31,970
+for subatomic processes
+that are inherently random.
+
+142
+00:05:31,970 --> 00:05:33,700
+The second part, in red,
+
+143
+00:05:33,700 --> 00:05:35,750
+is comprised of constraint p.d.f.s
+
+144
+00:05:35,750 --> 00:05:37,740
+that allow for different
+auxiliary measurements
+
+145
+00:05:37,740 --> 00:05:39,370
+to constrain the overall model
+
+146
+00:05:39,370 --> 00:05:41,920
+and encode different
+systematic uncertainties
+
+147
+00:05:41,920 --> 00:05:45,030
+from the physics theory
+and the detector responses.
+
+148
+00:05:45,030 --> 00:05:46,560
+So, in this example plot,
+
+149
+00:05:46,560 --> 00:05:48,720
+the samples could share
+a systematic uncertainty
+
+150
+00:05:48,720 --> 00:05:52,480
+in the normalization in
+addition to other modifiers.
+
+151
+00:05:52,480 --> 00:05:54,380
+This gives us a mathematical grammar
+
+152
+00:05:54,380 --> 00:05:58,480
+to setup a simultaneous fit
+for multiple channels, regions,
+
+153
+00:05:58,480 --> 00:06:02,210
+each with multiple bins and
+multiple samples, processes,
+
+154
+00:06:02,210 --> 00:06:04,550
+that are all coupled to
+a set of constraints.
+
+155
+00:06:04,550 --> 00:06:07,410
+But the important part is
+that this is just mathematics.
+
+156
+00:06:07,410 --> 00:06:10,160
+No software specification
+is defined anywhere,
+
+157
+00:06:10,160 --> 00:06:12,250
+but until very recently in 2018,
+
+158
+00:06:12,250 --> 00:06:14,860
+the only implementation
+that existed of HistFactory
+
+159
+00:06:14,860 --> 00:06:18,430
+was in the monolithic
+C++ library called ROOT
+
+160
+00:06:18,430 --> 00:06:20,150
+that has been the computational backbone
+
+161
+00:06:20,150 --> 00:06:23,890
+of experimental high energy
+physics for almost 25 years.
+
+162
+00:06:23,890 --> 00:06:26,150
+The change was the creation of pyhf,
+
+163
+00:06:26,150 --> 00:06:28,930
+the first pure Python
+implementation of HistFactory,
+
+164
+00:06:28,930 --> 00:06:30,320
+which as you can see below,
+
+165
+00:06:30,320 --> 00:06:32,490
+is just a pip install away on PyPI
+
+166
+00:06:32,490 --> 00:06:35,110
+and openly developed on GitHub.
+
+167
+00:06:35,110 --> 00:06:37,040
+Okay, now that we've hopefully motivated
+
+168
+00:06:37,040 --> 00:06:40,160
+the existence of pyhf and
+the HistFactory formalism,
+
+169
+00:06:40,160 --> 00:06:43,360
+let's dive into the pyhf API a bit.
+
+170
+00:06:43,360 --> 00:06:45,690
+The basic object that is
+at the heart of everything
+
+171
+00:06:45,690 --> 00:06:48,210
+is, unsurprisingly, the model.
+
+172
+00:06:48,210 --> 00:06:50,510
+However, what we're interested
+in doing with the model
+
+173
+00:06:50,510 --> 00:06:52,610
+is going to be maximum likelihood fits.
+
+174
+00:06:52,610 --> 00:06:54,850
+So we'll be dealing a lot with the logpdf
+
+175
+00:06:54,850 --> 00:06:57,710
+as we want to get the log
+likelihood of the model parameters
+
+176
+00:06:57,710 --> 00:07:00,120
+conditioned on the observed data.
+
+177
+00:07:00,120 --> 00:07:01,930
+In this minimal simple example,
+
+178
+00:07:01,930 --> 00:07:04,650
+using just two bins and a single channel,
+
+179
+00:07:04,650 --> 00:07:07,480
+we see that we can create
+a simplistic model quickly
+
+180
+00:07:07,480 --> 00:07:11,880
+and then with the data from
+our experimental obervations
+
+181
+00:07:11,880 --> 00:07:14,340
+and the model auxiliary constraints,
+
+182
+00:07:14,340 --> 00:07:15,980
+we can get the log likelihood
+
+183
+00:07:15,980 --> 00:07:19,760
+of the default initialization
+parameters of the model.
+
+184
+00:07:19,760 --> 00:07:21,090
+If we look at how this model
+
+185
+00:07:21,090 --> 00:07:23,890
+is actually being represented
+internally though,
+
+186
+00:07:23,890 --> 00:07:26,400
+we see that it is a
+directed computational graph
+
+187
+00:07:26,400 --> 00:07:29,580
+that shows the full
+formalism of HistFactory.
+
+188
+00:07:29,580 --> 00:07:30,850
+Each node of the graph
+
+189
+00:07:30,850 --> 00:07:33,700
+represents a vectorized
+n-dimensional array,
+
+190
+00:07:33,700 --> 00:07:37,260
+or, as we'll call it, "tensor" operation.
+
+191
+00:07:37,260 --> 00:07:38,960
+You can see from these colored nodes
+
+192
+00:07:38,960 --> 00:07:41,300
+that the data and the model parameters
+
+193
+00:07:41,300 --> 00:07:42,930
+enter at different points,
+
+194
+00:07:42,930 --> 00:07:46,763
+and are additionally largely
+factorized into subgraphs.
+
+195
+00:07:47,790 --> 00:07:49,330
+These parameter and data graphs
+
+196
+00:07:49,330 --> 00:07:51,870
+combine again at the bottom of the graph
+
+197
+00:07:51,870 --> 00:07:54,853
+to be used in the computation
+of the final log likelihood.
+
+198
+00:07:56,430 --> 00:07:59,630
+Okay, we can now turn our
+attention to the core task
+
+199
+00:07:59,630 --> 00:08:03,140
+of performing maximum
+likelihood fits with pyhf.
+
+200
+00:08:03,140 --> 00:08:05,820
+Here, we want to minimize
+the objective function
+
+201
+00:08:05,820 --> 00:08:08,620
+which is twice the
+negative log likelihood,
+
+202
+00:08:08,620 --> 00:08:11,420
+as minimizing the negative log likelihood
+
+203
+00:08:11,420 --> 00:08:13,883
+will result in maximizing the likelihood.
+
+204
+00:08:14,840 --> 00:08:18,720
+We can see that the pyhf API
+for this is pretty transparent.
+
+205
+00:08:18,720 --> 00:08:21,540
+And looking at the same
+minimal examples before,
+
+206
+00:08:21,540 --> 00:08:24,550
+we see that performing
+the maximum likelihood fit
+
+207
+00:08:24,550 --> 00:08:28,300
+with our optional
+return_fitted_val keyword argument
+
+208
+00:08:28,300 --> 00:08:30,600
+returns the maximum likelihood estimate
+
+209
+00:08:30,600 --> 00:08:32,020
+of the model parameters
+
+210
+00:08:32,020 --> 00:08:35,460
+as well as minus 2
+times the log likelihood
+
+211
+00:08:35,460 --> 00:08:38,050
+at these best fit parameters.
+
+212
+00:08:38,050 --> 00:08:40,860
+Additionally, we can
+see in these final steps
+
+213
+00:08:40,860 --> 00:08:43,993
+that we perform a demonstration
+check of that explicitly.
+
+214
+00:08:46,110 --> 00:08:47,490
+We're now going to use our tools
+
+215
+00:08:47,490 --> 00:08:49,360
+to get at what we really care about,
+
+216
+00:08:49,360 --> 00:08:51,220
+performing a profile likelihood fit
+
+217
+00:08:51,220 --> 00:08:53,440
+for our parameter of interest μ.
+
+218
+00:08:53,440 --> 00:08:56,200
+Here we profile out the
+nuisance parameters theta
+
+219
+00:08:56,200 --> 00:08:58,020
+by expressing the nuisance parameters
+
+220
+00:08:58,020 --> 00:09:00,910
+as functions of the
+parameter of interest itself.
+
+221
+00:09:00,910 --> 00:09:03,520
+So, from a physics standpoint,
+the parameter of interest
+
+222
+00:09:03,520 --> 00:09:05,580
+is typically the normalization factor
+
+223
+00:09:05,580 --> 00:09:07,250
+on the count of the new physics process
+
+224
+00:09:07,250 --> 00:09:08,600
+we're searching for.
+
+225
+00:09:08,600 --> 00:09:10,020
+And since we're searching for it
+
+226
+00:09:10,020 --> 00:09:11,130
+we call it the "signal",
+
+227
+00:09:11,130 --> 00:09:12,430
+and the Standard Model physics
+
+228
+00:09:12,430 --> 00:09:13,610
+we call the "background".
+
+229
+00:09:13,610 --> 00:09:16,000
+So we would call this
+particular parameter of interest
+
+230
+00:09:16,000 --> 00:09:17,610
+the signal strength.
+
+231
+00:09:17,610 --> 00:09:18,620
+Okay, anyway,
+
+232
+00:09:18,620 --> 00:09:21,170
+so what we want to do for
+this profile likelihood fit
+
+233
+00:09:21,170 --> 00:09:23,900
+is on the top line, perform
+a constrained best fit
+
+234
+00:09:23,900 --> 00:09:27,270
+for a given signal strength value µ
+
+235
+00:09:27,270 --> 00:09:28,450
+that we're testing
+
+236
+00:09:28,450 --> 00:09:30,420
+to get the best fit nuisance parameters
+
+237
+00:09:30,420 --> 00:09:31,950
+given this test value.
+
+238
+00:09:31,950 --> 00:09:33,740
+And then compare that result
+
+239
+00:09:33,740 --> 00:09:36,660
+to the unconstrained
+best fit on the bottom
+
+240
+00:09:36,660 --> 00:09:38,090
+where all the model parameters
+
+241
+00:09:38,090 --> 00:09:39,930
+are free parameters in the fit.
+
+242
+00:09:39,930 --> 00:09:41,600
+So we're doing a hypothesis test
+
+243
+00:09:41,600 --> 00:09:45,320
+for the production rate
+of our new physics.
+
+244
+00:09:45,320 --> 00:09:48,440
+So, we can then take this
+result as a test statistic
+
+245
+00:09:48,440 --> 00:09:52,200
+and calculate a modified
+p-value that we call the CLs,
+
+246
+00:09:52,200 --> 00:09:54,810
+using either results from
+asymptotic distributions
+
+247
+00:09:54,810 --> 00:09:56,910
+or generating pseudoexperiments.
+
+248
+00:09:56,910 --> 00:09:58,300
+And this is all to ask,
+
+249
+00:09:58,300 --> 00:10:00,080
+given our model and the data,
+
+250
+00:10:00,080 --> 00:10:01,860
+did we discover new physics?
+
+251
+00:10:01,860 --> 00:10:04,810
+And we want to do all of
+this as fast as possible.
+
+252
+00:10:04,810 --> 00:10:09,400
+And that's a lot, but pyhf
+provides a hypothesis test API,
+
+253
+00:10:09,400 --> 00:10:11,860
+and so continuing in our minimal example,
+
+254
+00:10:11,860 --> 00:10:14,390
+we see that performing the hypothesis test
+
+255
+00:10:14,390 --> 00:10:16,340
+for a signal strength
+that would be consistent
+
+256
+00:10:16,340 --> 00:10:18,740
+with theory predictions, one,
+
+257
+00:10:18,740 --> 00:10:22,320
+and our return_expected_set
+keyword argument,
+
+258
+00:10:22,320 --> 00:10:27,300
+we get back both the
+observed modified p-values
+
+259
+00:10:27,300 --> 00:10:30,590
+as well as a band of variations
+from the expected result
+
+260
+00:10:30,590 --> 00:10:32,350
+if there was no new physics.
+
+261
+00:10:32,350 --> 00:10:34,223
+This is exactly what we need.
+
+262
+00:10:36,610 --> 00:10:38,410
+As the serialization of the likelihood
+
+263
+00:10:38,410 --> 00:10:41,780
+had previously been in a
+domain-specific binary format
+
+264
+00:10:41,780 --> 00:10:43,240
+that provided some difficulties
+
+265
+00:10:43,240 --> 00:10:45,300
+for analysis reinterpretation,
+
+266
+00:10:45,300 --> 00:10:48,580
+we gave a lot of thought to
+how pyhf should do things.
+
+267
+00:10:48,580 --> 00:10:51,940
+This resulted in the decision
+to create a JSON schema
+
+268
+00:10:51,940 --> 00:10:54,390
+that would allow for a
+declarative specification
+
+269
+00:10:54,390 --> 00:10:56,450
+of the HistFactory model.
+
+270
+00:10:56,450 --> 00:10:58,590
+On the right, we see a
+short working example
+
+271
+00:10:58,590 --> 00:10:59,730
+of the JSON spec
+
+272
+00:10:59,730 --> 00:11:02,370
+for a single channel, two
+bin counting experiment
+
+273
+00:11:02,370 --> 00:11:04,490
+with a systematic uncertainty,
+
+274
+00:11:04,490 --> 00:11:06,580
+ignoring of course the
+highlighted comments,
+
+275
+00:11:06,580 --> 00:11:09,653
+which I put in by hand and
+are obviously invalid JSON.
+
+276
+00:11:10,560 --> 00:11:13,660
+Okay, so given our coverage
+of the HistFactory formalism,
+
+277
+00:11:13,660 --> 00:11:16,530
+we see that we have a list of channels
+
+278
+00:11:16,530 --> 00:11:17,670
+within a...
+
+279
+00:11:17,670 --> 00:11:19,030
+with a list of samples
+
+280
+00:11:19,030 --> 00:11:21,150
+with an associated list of rate factors
+
+281
+00:11:21,150 --> 00:11:23,470
+and systematic uncertainties,
+
+282
+00:11:23,470 --> 00:11:25,370
+as well as the observed data,
+
+283
+00:11:25,370 --> 00:11:27,300
+our declared parameter of interest,
+
+284
+00:11:27,300 --> 00:11:29,750
+and the schema version.
+
+285
+00:11:29,750 --> 00:11:31,790
+So all of HistFactory is represented here,
+
+286
+00:11:31,790 --> 00:11:33,110
+so we have a declarative,
+
+287
+00:11:33,110 --> 00:11:36,230
+full serialization of the likelihood.
+
+288
+00:11:36,230 --> 00:11:38,720
+JSON provides us many advantages.
+
+289
+00:11:38,720 --> 00:11:40,920
+It is both human and machine readable,
+
+290
+00:11:40,920 --> 00:11:43,760
+making it mentally much
+easier to deal with,
+
+291
+00:11:43,760 --> 00:11:46,110
+additionally, JSON is an industry standard
+
+292
+00:11:46,110 --> 00:11:47,560
+and will probably be with us
+
+293
+00:11:47,560 --> 00:11:49,160
+until the heat death of the universe.
+
+294
+00:11:49,160 --> 00:11:51,643
+So we have long, long-term
+support baked in.
+
+295
+00:11:52,533 --> 00:11:53,460
+In the same vein,
+
+296
+00:11:53,460 --> 00:11:55,650
+it is parsable in pretty
+much every language,
+
+297
+00:11:55,650 --> 00:11:58,110
+so if alternative implementations exist,
+
+298
+00:11:58,110 --> 00:12:00,580
+our models can be easily ported.
+
+299
+00:12:00,580 --> 00:12:03,530
+Finally, given the large
+cost of running the LHC
+
+300
+00:12:03,530 --> 00:12:06,470
+and building experimental
+detectors the size of buildings,
+
+301
+00:12:06,470 --> 00:12:08,630
+we want to try and reuse analyses
+
+302
+00:12:08,630 --> 00:12:10,820
+as much as possible in the future.
+
+303
+00:12:10,820 --> 00:12:13,460
+JSON is plain text and so versionable,
+
+304
+00:12:13,460 --> 00:12:15,860
+easily preserved, and highly compressible,
+
+305
+00:12:15,860 --> 00:12:17,303
+making it a great choice.
+
+306
+00:12:18,160 --> 00:12:20,360
+Another great thing about using JSON
+
+307
+00:12:20,360 --> 00:12:22,770
+is that we then also get JSON Patch,
+
+308
+00:12:22,770 --> 00:12:25,840
+which allows us to
+easily mutate our models.
+
+309
+00:12:25,840 --> 00:12:28,820
+If we take the example
+JSON spec we just looked at
+
+310
+00:12:28,820 --> 00:12:31,170
+and use the pyhf command line API
+
+311
+00:12:31,170 --> 00:12:33,760
+to perform a CLs computation,
+
+312
+00:12:33,760 --> 00:12:35,190
+we get an observed value
+
+313
+00:12:35,190 --> 00:12:37,440
+given the background and
+signal models considered.
+
+314
+00:12:37,440 --> 00:12:40,810
+We can call this using signal model A.
+
+315
+00:12:40,810 --> 00:12:43,530
+If we want to now test
+some new physics model,
+
+316
+00:12:43,530 --> 00:12:45,790
+we can call that signal model B,
+
+317
+00:12:45,790 --> 00:12:47,890
+that would have different contributions,
+
+318
+00:12:47,890 --> 00:12:49,800
+then we can use JSON Patch
+
+319
+00:12:49,800 --> 00:12:52,450
+to patch in this new signal on the fly
+
+320
+00:12:52,450 --> 00:12:54,480
+and recompute our result.
+
+321
+00:12:54,480 --> 00:12:57,580
+So we now see that the
+observed modified p-value,
+
+322
+00:12:57,580 --> 00:12:59,320
+the observed CLs that we get
+
+323
+00:12:59,320 --> 00:13:01,520
+for this new patched-in signal model
+
+324
+00:13:01,520 --> 00:13:04,153
+is different from the
+original signal model result.
+
+325
+00:13:05,270 --> 00:13:06,920
+In a typical physics analysis,
+
+326
+00:13:06,920 --> 00:13:09,500
+we additionally want to
+evaluate signal hypotheses
+
+327
+00:13:09,500 --> 00:13:11,710
+for a range of possible particle masses,
+
+328
+00:13:11,710 --> 00:13:13,210
+which results in hundreds of points
+
+329
+00:13:13,210 --> 00:13:15,840
+in our parameter space to evaluate.
+
+330
+00:13:15,840 --> 00:13:19,110
+The choice of JSON allows for
+us to further simplify things
+
+331
+00:13:19,110 --> 00:13:21,440
+by breaking out the
+background-only model JSON
+
+332
+00:13:21,440 --> 00:13:24,530
+into one file and then
+creating a patch set file
+
+333
+00:13:24,530 --> 00:13:27,470
+that contains all of the
+signal model JSON patches
+
+334
+00:13:27,470 --> 00:13:29,090
+inside of it.
+
+335
+00:13:29,090 --> 00:13:32,120
+These two JSON files,
+along with the pyhf schema,
+
+336
+00:13:32,120 --> 00:13:34,610
+fully preserve the analysis likelihood
+
+337
+00:13:34,610 --> 00:13:36,600
+making it reusable by both theorists
+
+338
+00:13:36,600 --> 00:13:38,940
+and experimentalists alike.
+
+339
+00:13:38,940 --> 00:13:40,050
+These full likelihoods
+
+340
+00:13:40,050 --> 00:13:42,620
+can then be publicly published to HEPData,
+
+341
+00:13:42,620 --> 00:13:43,980
+a repository for data
+
+342
+00:13:43,980 --> 00:13:46,450
+associated with particle physics results,
+
+343
+00:13:46,450 --> 00:13:50,300
+which will even mint a DOI for
+these data products as well.
+
+344
+00:13:50,300 --> 00:13:52,830
+When validating that the
+results obtained with pyhf
+
+345
+00:13:52,830 --> 00:13:55,770
+were consistent with the
+results from the C++ library,
+
+346
+00:13:55,770 --> 00:13:57,980
+we saw excellent agreement.
+
+347
+00:13:57,980 --> 00:14:00,220
+On the right plot, made with Matplotlib,
+
+348
+00:14:00,220 --> 00:14:02,970
+there are actually
+multiple contours overlaid,
+
+349
+00:14:02,970 --> 00:14:04,930
+not just one with cross hatching.
+
+350
+00:14:04,930 --> 00:14:07,250
+But the agreement between the C++ results
+
+351
+00:14:07,250 --> 00:14:08,890
+and pyhf is so good
+
+352
+00:14:08,890 --> 00:14:11,980
+it's very difficult to see any deviations.
+
+353
+00:14:11,980 --> 00:14:14,060
+As an additional really nice aspect,
+
+354
+00:14:14,060 --> 00:14:16,010
+when we computed all the points required
+
+355
+00:14:16,010 --> 00:14:17,847
+to construct this contour,
+
+356
+00:14:17,847 --> 00:14:20,600
+pyhf was able to do so
+significantly faster,
+
+357
+00:14:20,600 --> 00:14:23,290
+taking minutes as compared to hours.
+
+358
+00:14:23,290 --> 00:14:25,830
+The publication of the
+full likelihoods to HEPData
+
+359
+00:14:25,830 --> 00:14:28,840
+using the pyhf schema, has
+an additional distinction
+
+360
+00:14:28,840 --> 00:14:30,820
+of solving a nearly 20 year-old problem
+
+361
+00:14:30,820 --> 00:14:32,920
+in the field of particle physics.
+
+362
+00:14:32,920 --> 00:14:34,480
+At a workshop in 2000,
+
+363
+00:14:34,480 --> 00:14:37,090
+whose proceedings the
+quotes here are taken from,
+
+364
+00:14:37,090 --> 00:14:38,720
+there was agreement in the community
+
+365
+00:14:38,720 --> 00:14:41,910
+that the LHC experiments should
+publish their likelihoods
+
+366
+00:14:41,910 --> 00:14:43,730
+as part of the results.
+
+367
+00:14:43,730 --> 00:14:47,330
+However, the technical aspect
+of what exactly to publish
+
+368
+00:14:47,330 --> 00:14:49,570
+and how, are non-trivial.
+
+369
+00:14:49,570 --> 00:14:51,950
+By focusing on just HistFactory models,
+
+370
+00:14:51,950 --> 00:14:54,410
+given their extensive use and popularity,
+
+371
+00:14:54,410 --> 00:14:56,220
+we were able to make
+good on this agreement
+
+372
+00:14:56,220 --> 00:15:00,320
+when in 2019 the ATLAS
+collaboration published to HEPData
+
+373
+00:15:00,320 --> 00:15:01,620
+the likelihoods for a search
+
+374
+00:15:01,620 --> 00:15:04,440
+for bottom-squark pair
+production in final states
+
+375
+00:15:04,440 --> 00:15:06,520
+contain Higgs bosons, b-jets,
+
+376
+00:15:06,520 --> 00:15:08,223
+and missing transverse momentum.
+
+377
+00:15:09,330 --> 00:15:12,450
+The speed-ups we observed with
+pyhf, on a single machine,
+
+378
+00:15:12,450 --> 00:15:15,570
+can be further improved
+by parallelizing the fits
+
+379
+00:15:15,570 --> 00:15:18,030
+of all the signal hypotheses.
+
+380
+00:15:18,030 --> 00:15:21,410
+Here we see a GIF on the
+right of the Jupyter Notebook
+
+381
+00:15:21,410 --> 00:15:23,350
+that is sending out fits of the models
+
+382
+00:15:23,350 --> 00:15:25,260
+for all the signal hypotheses
+
+383
+00:15:25,260 --> 00:15:28,430
+to run on 25 worker nodes in the cloud,
+
+384
+00:15:28,430 --> 00:15:31,840
+and then updating the exclusion
+contour plot in real time
+
+385
+00:15:31,840 --> 00:15:33,693
+as those fit results come back in.
+
+386
+00:15:34,660 --> 00:15:37,110
+As the different fits are
+independent of each other,
+
+387
+00:15:37,110 --> 00:15:39,740
+the patch background and signal models
+
+388
+00:15:39,740 --> 00:15:42,410
+can be sent out to worker nodes on demand,
+
+389
+00:15:42,410 --> 00:15:45,150
+taking advantage of the
+scaling to make quick work
+
+390
+00:15:45,150 --> 00:15:48,310
+of this embarrassingly
+parralelizable problem.
+
+391
+00:15:48,310 --> 00:15:50,030
+Through this weak parallelism,
+
+392
+00:15:50,030 --> 00:15:52,190
+the same contour plot we just saw
+
+393
+00:15:52,190 --> 00:15:55,500
+can be fully reproduced
+in just three minutes.
+
+394
+00:15:55,500 --> 00:15:59,210
+This clearly motivates the
+idea of "fitting as a service"
+
+395
+00:15:59,210 --> 00:16:00,663
+on clusters in the future.
+
+396
+00:16:04,430 --> 00:16:06,400
+The reason for pyhf's performance
+
+397
+00:16:06,400 --> 00:16:09,010
+comes from the choice to
+use tensor algebra libraries
+
+398
+00:16:09,010 --> 00:16:11,160
+as our computational backends.
+
+399
+00:16:11,160 --> 00:16:12,530
+Our default backend,
+
+400
+00:16:12,530 --> 00:16:14,510
+as you may have noticed
+from the examples so far,
+
+401
+00:16:14,510 --> 00:16:18,480
+is NumPy with SciPy
+providing the optimizer.
+
+402
+00:16:18,480 --> 00:16:22,160
+We additionally also support
+PyTorch, TensorFlow, and JAX
+
+403
+00:16:22,160 --> 00:16:25,610
+as computational backends
+with full feature parity.
+
+404
+00:16:25,610 --> 00:16:26,710
+One of the motivations
+
+405
+00:16:26,710 --> 00:16:29,200
+for choosing machine learning
+frameworks as backends
+
+406
+00:16:29,200 --> 00:16:31,450
+is to exploit automatic differentiation
+
+407
+00:16:31,450 --> 00:16:33,240
+of their computational graphs
+
+408
+00:16:33,240 --> 00:16:35,360
+and the hardware acceleration on GPUs
+
+409
+00:16:35,360 --> 00:16:38,460
+that they are designed to
+work with to speed up fits.
+
+410
+00:16:38,460 --> 00:16:40,560
+As can be seen here in
+the lower left plot,
+
+411
+00:16:40,560 --> 00:16:41,690
+in this preliminary study
+
+412
+00:16:41,690 --> 00:16:44,620
+of the effects of hardware
+acceleration on pyhf fit times
+
+413
+00:16:44,620 --> 00:16:48,070
+for admittedly somewhat
+unrealistic models,
+
+414
+00:16:48,070 --> 00:16:50,430
+we see that as the model complexity grows
+
+415
+00:16:50,430 --> 00:16:51,790
+there is significant gains
+
+416
+00:16:51,790 --> 00:16:54,230
+in the speed-ups provided by GPUs.
+
+417
+00:16:54,230 --> 00:16:57,360
+In some cases, even an order of magnitude.
+
+418
+00:16:57,360 --> 00:16:59,160
+This has allowed for some real models
+
+419
+00:16:59,160 --> 00:17:01,540
+to move from being fit
+in hours to minutes,
+
+420
+00:17:01,540 --> 00:17:03,210
+and minutes to seconds.
+
+421
+00:17:03,210 --> 00:17:06,610
+Turning overnight jobs into
+nearly interactive analyses,
+
+422
+00:17:06,610 --> 00:17:10,110
+or at least an excuse to go for a coffee.
+
+423
+00:17:10,110 --> 00:17:11,510
+Additionally, while we'd like to think
+
+424
+00:17:11,510 --> 00:17:12,800
+good things about ourselves,
+
+425
+00:17:12,800 --> 00:17:15,190
+physicists are not professional
+software engineers,
+
+426
+00:17:15,190 --> 00:17:18,440
+nor the incredible NumPy
+and SciPy dev teams.
+
+427
+00:17:18,440 --> 00:17:19,900
+We're physicists!
+
+428
+00:17:19,900 --> 00:17:22,140
+So, being able to build
+on top of the hard work
+
+429
+00:17:22,140 --> 00:17:24,820
+of the professionals that build
+these open source libraries
+
+430
+00:17:24,820 --> 00:17:26,990
+is hugely empowering.
+
+431
+00:17:26,990 --> 00:17:29,720
+What pyhf provides is a unified API
+
+432
+00:17:29,720 --> 00:17:31,740
+to our computational backends
+
+433
+00:17:31,740 --> 00:17:33,860
+through our tensorlib shim.
+
+434
+00:17:33,860 --> 00:17:36,600
+You can see here for our
+four supported backends,
+
+435
+00:17:36,600 --> 00:17:37,970
+the code needed for pyhf
+
+436
+00:17:37,970 --> 00:17:40,380
+to provide a Normal distribution object
+
+437
+00:17:40,380 --> 00:17:43,540
+through our tensorlib normal_dist API.
+
+438
+00:17:43,540 --> 00:17:45,480
+Without the analyst ever needing to care
+
+439
+00:17:45,480 --> 00:17:47,530
+which backend they've chosen to use.
+
+440
+00:17:47,530 --> 00:17:48,540
+This additionally allows
+
+441
+00:17:48,540 --> 00:17:50,930
+for transparently changing the backend
+
+442
+00:17:50,930 --> 00:17:52,863
+with our set_backend API.
+
+443
+00:17:53,925 --> 00:17:56,300
+In this example, we see
+that using pyhf's API
+
+444
+00:17:56,300 --> 00:17:59,580
+we were able to build
+two Normal distributions,
+
+445
+00:17:59,580 --> 00:18:01,490
+and then evaluate their log pdf
+
+446
+00:18:01,490 --> 00:18:03,450
+for particular observation values
+
+447
+00:18:03,450 --> 00:18:06,820
+in the native tensor
+representation of each backend.
+
+448
+00:18:06,820 --> 00:18:09,730
+All of course giving consistent values.
+
+449
+00:18:09,730 --> 00:18:12,010
+Additionally, for the
+tensor library backends
+
+450
+00:18:12,010 --> 00:18:14,560
+that provide automatic differentiation,
+
+451
+00:18:14,560 --> 00:18:17,730
+we gain access to the full
+gradient of the likelihood
+
+452
+00:18:17,730 --> 00:18:19,870
+resulting in our accuracy being limited
+
+453
+00:18:19,870 --> 00:18:21,960
+by floating point precision.
+
+454
+00:18:21,960 --> 00:18:23,610
+We can exploit the full gradient
+
+455
+00:18:23,610 --> 00:18:25,890
+by providing it to the modern optimizers
+
+456
+00:18:25,890 --> 00:18:29,010
+our backends provide to
+help speed up the fit.
+
+457
+00:18:29,010 --> 00:18:30,610
+It is also worth pointing out
+
+458
+00:18:30,610 --> 00:18:33,360
+that this was made possible
+by the fact that the backends
+
+459
+00:18:33,360 --> 00:18:36,230
+are constructing computational
+graphs of our model,
+
+460
+00:18:36,230 --> 00:18:39,020
+as we saw before, and then
+applying the chain rule
+
+461
+00:18:39,020 --> 00:18:41,610
+to the tensorized
+operations in these graphs
+
+462
+00:18:41,610 --> 00:18:43,460
+to move the gradients through the graphs
+
+463
+00:18:43,460 --> 00:18:45,170
+along with the data.
+
+464
+00:18:45,170 --> 00:18:46,530
+The benefits that are received
+
+465
+00:18:46,530 --> 00:18:48,400
+from these tensorized representations
+
+466
+00:18:48,400 --> 00:18:50,240
+are not to be understated.
+
+467
+00:18:50,240 --> 00:18:52,570
+The ability to represent
+the HistFactory models
+
+468
+00:18:52,570 --> 00:18:55,450
+in this graph visually
+alone is impressive.
+
+469
+00:18:55,450 --> 00:18:58,180
+When for comparison, this
+is the graph of the model
+
+470
+00:18:58,180 --> 00:19:01,570
+used in the Higgs discovery
+in the C++ framework.
+
+471
+00:19:01,570 --> 00:19:03,360
+Zooming out to have it all fit on screen
+
+472
+00:19:03,360 --> 00:19:06,820
+makes it difficult to even see
+the nodes of the operations.
+
+473
+00:19:06,820 --> 00:19:09,290
+I think this serves as
+a good visual example
+
+474
+00:19:09,290 --> 00:19:12,970
+of the wins that we get from
+moving computational complexity
+
+475
+00:19:12,970 --> 00:19:14,893
+into tensor dimensionality.
+
+476
+00:19:16,200 --> 00:19:19,300
+pyhf is already starting to be
+used in physics publications
+
+477
+00:19:19,300 --> 00:19:21,430
+in the high energy physics community.
+
+478
+00:19:21,430 --> 00:19:23,370
+What is exciting is that both theorists
+
+479
+00:19:23,370 --> 00:19:25,380
+and experimentalists are using it.
+
+480
+00:19:25,380 --> 00:19:27,790
+On the left you can see
+a phenomenology paper
+
+481
+00:19:27,790 --> 00:19:30,640
+that used pyhf for
+performing reinterpretation
+
+482
+00:19:30,640 --> 00:19:33,550
+with the GIF below cycling
+through different physics models.
+
+483
+00:19:33,550 --> 00:19:35,520
+And on the right, you
+can see the public note
+
+484
+00:19:35,520 --> 00:19:38,390
+that ATLAS released on the
+use of public full likelihoods
+
+485
+00:19:38,390 --> 00:19:40,300
+for reproduction of results.
+
+486
+00:19:40,300 --> 00:19:42,600
+Below that is the CERN
+news article headline
+
+487
+00:19:42,600 --> 00:19:45,020
+that was published on
+open full likelihoods
+
+488
+00:19:45,020 --> 00:19:48,090
+highlighting what a dramatic
+change it has allowed.
+
+489
+00:19:48,090 --> 00:19:50,600
+We'd also like to think
+that the uses of pyhf
+
+490
+00:19:50,600 --> 00:19:53,580
+are not only found inside
+of high energy physics.
+
+491
+00:19:53,580 --> 00:19:55,020
+Here, we see public data
+
+492
+00:19:55,020 --> 00:19:57,130
+from the Fermi Large Area Telescope
+
+493
+00:19:57,130 --> 00:20:00,060
+analyzed with pyhf in a Jupyter Notebook.
+
+494
+00:20:00,060 --> 00:20:02,580
+The LAT is a high-energy
+gamma-ray telescope
+
+495
+00:20:02,580 --> 00:20:05,660
+on the Fermi gamma-ray
+space telescope spacecraft
+
+496
+00:20:05,660 --> 00:20:07,430
+used to observe gamma-ray photons
+
+497
+00:20:07,430 --> 00:20:10,270
+coming from extreme cosmological events.
+
+498
+00:20:10,270 --> 00:20:12,760
+We can represent the
+photon count in the LAT
+
+499
+00:20:12,760 --> 00:20:14,030
+as a binned model,
+
+500
+00:20:14,030 --> 00:20:16,610
+such that after
+constructing a model in pyhf
+
+501
+00:20:16,610 --> 00:20:18,840
+and performing a maximum likelihood fit,
+
+502
+00:20:18,840 --> 00:20:21,660
+the results can be visualized with healpy.
+
+503
+00:20:21,660 --> 00:20:23,610
+Here, we can view the resulting mapping
+
+504
+00:20:23,610 --> 00:20:25,290
+as a two-dimensional histogram
+
+505
+00:20:25,290 --> 00:20:27,530
+with special binning choices.
+
+506
+00:20:27,530 --> 00:20:30,740
+While none of the pyhf core
+dev team works in astrophysics,
+
+507
+00:20:30,740 --> 00:20:33,280
+we're interested to see
+what overlaps might exist
+
+508
+00:20:33,280 --> 00:20:34,563
+for use of pyhf.
+
+509
+00:20:35,500 --> 00:20:38,400
+In summary, pyhf is a statistical library
+
+510
+00:20:38,400 --> 00:20:40,090
+that provides accelerated fitting
+
+511
+00:20:40,090 --> 00:20:41,960
+for high energy physics models
+
+512
+00:20:41,960 --> 00:20:45,250
+by exploiting tensor libraries
+as computational backends
+
+513
+00:20:45,250 --> 00:20:48,850
+for vectorized operations,
+automatic differentiation,
+
+514
+00:20:48,850 --> 00:20:50,760
+and hardware acceleration.
+
+515
+00:20:50,760 --> 00:20:54,140
+It uses a JSON schema to
+provide a flexible specification
+
+516
+00:20:54,140 --> 00:20:55,420
+for declarative models,
+
+517
+00:20:55,420 --> 00:20:58,090
+and through JSON Patch
+is an enabling technology
+
+518
+00:20:58,090 --> 00:21:00,930
+for reinterpretation of physics results.
+
+519
+00:21:00,930 --> 00:21:04,030
+pyhf is also at the heart of
+the growing Pythonic ecosystem
+
+520
+00:21:04,030 --> 00:21:05,520
+in high energy physics.
+
+521
+00:21:05,520 --> 00:21:06,650
+So let me plug the talks
+
+522
+00:21:06,650 --> 00:21:08,900
+of my Scikit-HEP and IRIS-HEP colleagues,
+
+523
+00:21:08,900 --> 00:21:11,690
+Jim and Henry, who are
+both giving talks this week
+
+524
+00:21:11,690 --> 00:21:13,900
+in the high performance Python track.
+
+525
+00:21:13,900 --> 00:21:16,270
+Go check them out as
+they're going to be great!
+
+526
+00:21:16,270 --> 00:21:18,220
+Also feel free to ask us any questions
+
+527
+00:21:18,220 --> 00:21:20,660
+about Scikit-HEP or IRIS-HEP.
+
+528
+00:21:20,660 --> 00:21:22,930
+Thank you so much for
+listening to my talk.
+
+529
+00:21:22,930 --> 00:21:25,500
+Here I'll note that pyhf
+is a Scikit-HEP project
+
+530
+00:21:25,500 --> 00:21:27,330
+and that I received support from IRIS-HEP
+
+531
+00:21:27,330 --> 00:21:28,720
+to help develop it.
+
+532
+00:21:28,720 --> 00:21:30,040
+But I've just been so excited
+
+533
+00:21:30,040 --> 00:21:31,930
+to get to talk with you at SciPy this year
+
+534
+00:21:31,930 --> 00:21:34,460
+and I can say on behalf of
+Lukas, Giordon, and myself
+
+535
+00:21:34,460 --> 00:21:37,510
+that we would love to get to
+talk with you more about pyhf.
+
+536
+00:21:37,510 --> 00:21:38,900
+So, please come talk to us
+
+537
+00:21:38,900 --> 00:21:41,860
+and I'm looking forward
+to the Q&A tomorrow.
+
+538
+00:21:41,860 --> 00:21:43,460
+Finally, I wanted to say thank you
+
+539
+00:21:43,460 --> 00:21:45,430
+to the SciPy conference organizers
+
+540
+00:21:45,430 --> 00:21:47,850
+for making this conference
+happen at all this year,
+
+541
+00:21:47,850 --> 00:21:50,280
+and for making this
+conference be a success.
+
+542
+00:21:50,280 --> 00:21:51,490
+You've done a heroic job
+
+543
+00:21:51,490 --> 00:21:53,740
+and I wanted to say thanks
+for giving me an opportunity
+
+544
+00:21:53,740 --> 00:21:55,490
+to get to share our work with everyone.
+
+545
+00:21:55,490 --> 00:21:57,940
+Hope everyone has a great
+rest of the conference.
+
