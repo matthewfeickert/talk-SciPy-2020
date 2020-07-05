@@ -38,6 +38,31 @@ body {
     color: #808080;
 }
 
+.pyhf {
+    color: #0094FF;
+}
+
+.roundtrip {
+    color: #ffd700;
+}
+
+.root {
+    color: #cbbaed;
+}
+
+/* https://imagecolorpicker.com/en/ */
+.pars_blue {
+    color: #73bbe6;
+}
+
+.data_green {
+    color: #a5dc92;
+}
+
+.value_orange {
+    color: #ddc16c;
+}
+
 .Q {
     color: #009933;
 }
@@ -88,7 +113,7 @@ body {
     font-size: 0.6em;
 }
 
-.smaller {
+.smaller, .small {
     font-size: 0.8em;
 }
 
@@ -216,7 +241,27 @@ td {
   border-style: dashed;
 }
 
-.width-5 * {
+.width-01 * {
+    width: 1%;
+}
+
+.width-015 * {
+    width: 1.5%;
+}
+
+.width-02 * {
+    width: 2%;
+}
+
+.width-03 * {
+    width: 3%;
+}
+
+.width-04 * {
+    width: 4%;
+}
+
+.width-05 * {
     width: 5%;
 }
 
@@ -377,32 +422,6 @@ td {
 }
 
 /* Title slide */
-
-.title-slide:after {
-    content: '';
-    background: url("../assets/logos/logo_institution.png") no-repeat;
-    background-size: 100% 100%;
-    width: 288px;
-    height: 50px;
-    position: absolute;
-    bottom: 2em;
-    left: 3.3em;
-    display: inline-block;
-}
-
-/* Hack to get pyhf logo on */
-.title-slide:before {
-    content: '';
-    background: url("https://iris-hep.org/assets/logos/pyhf-logo.png") no-repeat;
-    /* background: url("../assets/logos/logo_experiment.png") no-repeat; */
-    background-size: 100% 100%;
-    width: 160px;
-    height: 108px;
-    position: absolute;
-    bottom: 2em;
-    right: 3.3em;
-    display: inline-block;
-}
 
 .title-slide {
     vertical-align: middle;

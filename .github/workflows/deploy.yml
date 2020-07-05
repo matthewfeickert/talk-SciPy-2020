@@ -1,0 +1,31 @@
+name: Deploy build
+
+on:
+  push:
+    branches:
+    - master
+    tags:
+    - v*
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup build for deployment
+      run: |
+        mkdir -p talk/_build
+        cp -r assets talk/_build/
+        cp -r figures talk/_build/
+        cp index.html talk/_build/
+        cp talk.md talk/_build/
+    - name: Deploy build to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: talk/_build
+        publish_branch: gh-pages
+        force_orphan: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
