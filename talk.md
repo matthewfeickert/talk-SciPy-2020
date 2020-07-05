@@ -315,7 +315,7 @@ $$
 ]
 .kol-2-3[
 <!-- https://github.com/lukasheinrich/lhoodbinder2 -->
-<!-- .center.width-45[[![plot_countour](plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)] -->
+<!-- .center.width-45[[![plot_countour](figures/plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)] -->
 .center.width-70[[![plot_countour](http://www.cern.ch/feickert/talks/plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)]
 .center.small[(GIF sped up by 8x)]
 ]
