@@ -12,7 +12,7 @@ count: false
 .width-02[![Twitter](figures/twitter.svg)] [@HEPfeickert](https://twitter.com/HEPfeickert)<br>
 .width-02[![GitHub](figures/github.svg)] [matthewfeickert](https://github.com/matthewfeickert)
 
-[SciPy 2020](https://talk-event-url)<br>
+[SciPy 2020](https://youtu.be/FrH9s3eB6fU)<br>
 July 7th, 2020
 
 ---
