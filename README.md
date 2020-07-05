@@ -2,7 +2,9 @@
 
 Talk given at the [2020 SciPy conference](https://www.scipy2020.scipy.org/)
 
-Viewable online [here](https://matthewfeickert.github.io/talk-SciPy-2020/index.html?p=talk.md)
+Viewable online:
+- [Slides](https://matthewfeickert.github.io/talk-SciPy-2020/index.html?p=talk.md)
+- [YouTube](https://youtu.be/FrH9s3eB6fU)
 
 ## Acknowledgments
 
