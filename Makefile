@@ -10,3 +10,8 @@ decktape: talk.md
 	docker run --rm -v ${dir_path}:/slides/ astefanutti/decktape \
 	https://matthewfeickert.github.io/${current_dir}/index.html?p=talk.md \
 	talk.pdf
+
+decktape_local: talk.md
+	docker run --rm -t --net=host -v ${dir_path}:/slides astefanutti/decktape:2.11.0 \
+	http://localhost:8001 \
+	localhost_draft.pdf
