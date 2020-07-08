@@ -571,9 +571,19 @@ We hope that `pyhf` serves as an example of how models can be expressed in a dec
 ---
 # Is this frequentist only?
 
-No. the likelihood is common to both, can use pyhf model in conjunction with a prior to do Bayesian inference.
 
-One of our "investigative" research areas is looking at using emcee and PyMC3 to do Bayesian inference with `pyhf` models.
+<br>
+<br>
+
+.large[
+Not exactly.
+The inference machinery that `pyhf` comes equipped with is frequentist focused, but the likelihood is common to both frequentist and Bayesian statistics.
+You could use the `pyhf` model in conjunction with priors to do Bayesian inference.
+]
+
+.large[
+One of our "investigative" research areas is looking at using [emcee](https://github.com/dfm/emcee) and [PyMC3](https://github.com/pymc-devs/pymc3) to do Bayesian inference with `pyhf` models.
+]
 
 ---
 # Profile likelihood fit?
