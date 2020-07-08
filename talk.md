@@ -557,6 +557,41 @@ $$
 ]
 
 ---
+# Can I use `pyhf` if I'm not a physicist?
+
+<br>
+<br>
+
+.large[
+`pyhf` itself is focused exclusively on the HistFactory statistical model, but if you are performing counting experiments with template fits then maybe.
+
+We hope that `pyhf` serves as an example of how models can be expressed in a declarative manner and implemented in a backend agnostic manner.
+]
+
+---
+# Is this frequentist only?
+
+No. the likelihood is common to both, can use pyhf model in conjunction with a prior to do Bayesian inference.
+
+One of our "investigative" research areas is looking at using emcee and PyMC3 to do Bayesian inference with `pyhf` models.
+
+---
+# Profile likelihood fit?
+
+Duh.
+
+---
+# What the fresh hell is a CLs value?
+
+Duh.
+
+---
+# Why are the graphs between `pyhf` and `HistFactory` so different?
+
+you can sort of see that the computational graph is arranged completely different between ROOT and pyhf -- so this is sort of like two different ways of doing it.
+in ROOT, there's explicit boundaries amongst the channels/samples/bins -- while pyhf merges things together to reduce computations.
+
+---
 # References
 
 1. F. James, Y. Perrin, L. Lyons, .italic[[Workshop on confidence limits: Proceedings](http://inspirehep.net/record/534129)], 2000.
