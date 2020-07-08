@@ -598,8 +598,16 @@ Duh.
 ---
 # Why are the graphs between `pyhf` and `HistFactory` so different?
 
-you can sort of see that the computational graph is arranged completely different between ROOT and pyhf -- so this is sort of like two different ways of doing it.
-in ROOT, there's explicit boundaries amongst the channels/samples/bins -- while pyhf merges things together to reduce computations.
+<br>
+<br>
+
+.large[
+The computational graph is arranged completely different between `ROOT` and `pyhf` &mdash; two different ways of doing the computation.
+]
+
+.large[
+In `ROOT`, there's explicit boundaries amongst the channels/samples/bins &mdash; while `pyhf` _merges_ things together to reduce computations and take advantage of vectorization.
+]
 
 ---
 # References
