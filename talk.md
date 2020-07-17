@@ -556,6 +556,24 @@ $$
 [![discrepancy](figures/discrepancy.png)](https://cds.cern.ch/record/2684863)
 ]
 
+<!-- Questions from Q&A Session -->
+---
+# How are gradients computed when using NumPy?
+> How are gradients computed when using NumPy (numerically?) Were you able to compare the performance of any backends with and without AD to see how much that speeds things up?
+
+---
+# How much of an affect does automatic differentiation have on fit speed?
+
+---
+# What SciPy optimizer are being used for MLE?
+> Did you say you were using a generic SciPy optimizer for MLE rather than something specialized for your problem? If so, which one?
+
+---
+# Is the NumPy backend competitive against C++?
+> Apples to apples comparisons are hard, but when comparing performance gains against ROOT (the c++ alternative) was the numpy backend competitive?
+
+<!-- /Questions from Q&A Session -->
+
 ---
 # Can I use `pyhf` if I'm not a physicist?
 
@@ -586,14 +604,23 @@ One of our "investigative" research areas is looking at using [emcee](https://gi
 ]
 
 ---
-# Profile likelihood fit?
+# What is a $\mathrm{CL}\_{s}$ value?
 
-Duh.
+$$
+\mathrm{CL}\_{s} = \frac{\mathrm{CL}\_{s+b}}{\mathrm{CL}\_{b}} = \frac{p\_{s+b}}{1-p\_{b}}
+$$
 
----
-# What the fresh hell is a CLs value?
+A. Read, .italic[[Modified frequentist analysis of search results (the $\\mathrm{CL}_{s}$ method)](http://cds.cern.ch/record/451614)], 2000.
 
-Duh.
+.kol-1-2.center.width-80[
+![CLs_example](figures/CLs_example.png)
+]
+.kol-1-2.width-100[
+- A modified p-value that represents "the ratio of the confidences in the signal+background to background hypotheses"
+- Use to protect against excluding signal models in which there is little sensitivity
+- Want to make sure that you don't exclude a signal when you don't have sensitivity
+- Really pseudo-frequentist as overcovers by design, and doesn't give bounds of a Bayesian credibility interval either
+]
 
 ---
 # Why are the graphs between `pyhf` and `HistFactory` so different?
