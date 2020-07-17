@@ -556,23 +556,25 @@ $$
 [![discrepancy](figures/discrepancy.png)](https://cds.cern.ch/record/2684863)
 ]
 
-<!-- Questions from Q&A Session -->
 ---
 # How are gradients computed when using NumPy?
-> How are gradients computed when using NumPy (numerically?) Were you able to compare the performance of any backends with and without AD to see how much that speeds things up?
+
+- Answer
 
 ---
 # How much of an affect does automatic differentiation have on fit speed?
 
+- Answer
+
 ---
 # What SciPy optimizer are being used for MLE?
-> Did you say you were using a generic SciPy optimizer for MLE rather than something specialized for your problem? If so, which one?
+
+- Answer
 
 ---
 # Is the NumPy backend competitive against C++?
-> Apples to apples comparisons are hard, but when comparing performance gains against ROOT (the c++ alternative) was the numpy backend competitive?
 
-<!-- /Questions from Q&A Session -->
+- Answer
 
 ---
 # Can I use `pyhf` if I'm not a physicist?
