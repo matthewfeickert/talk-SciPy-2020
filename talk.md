@@ -564,7 +564,7 @@ $$
 <br>
 
 .large[
-As the NumPy backend with the SciPy optimizer doesn't support automatic differentiation, we make use of [`scipy.optimize.minimize`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/autodiff.py) along with the [Sequential Least Squares Programming (SLSQP) method](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/opt_scipy.py) and information on the Jacobian for the fit.
+As the NumPy backend with the SciPy optimizer doesn't support automatic differentiation, we make use of [`scipy.optimize.minimize`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/autodiff.py) along with the [Sequential Least Squares Programming (SLSQP) method](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/opt_scipy.py) for the fit.
 ]
 
 ---
