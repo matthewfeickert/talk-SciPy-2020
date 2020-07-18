@@ -582,7 +582,7 @@ In general though, lager more complex models derive greater benefits from automa
 ]
 
 ---
-# What SciPy optimizer are being used for MLE?
+# What SciPy optimizers are being used for MLE?
 
 <br>
 <br>
