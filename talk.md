@@ -589,7 +589,14 @@ We further leverage this through a custom [`AutoDiffOptimizerMixin`](https://git
 ---
 # Is the NumPy backend competitive against C++?
 
-- Answer
+<br>
+<br>
+<br>
+
+.large[
+Not for all models, but for some yes.
+If the model isn't too large and doesn't have a huge number of systematics, we can take advantage of the way the computations are laid out differently between `pyhf` and the C++ implementation and still be quite performant compared to the C++ thanks to vectorization.
+]
 
 ---
 # Can I use `pyhf` if I'm not a physicist?
