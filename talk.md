@@ -571,9 +571,15 @@ As the NumPy backend with the SciPy optimizer doesn't support automatic differen
 # How much of an affect does automatic differentiation have on fit speed?
 
 <br>
-<br>
 
-.large[Rigorous benchmarking hasn't been done yet, but for larger models we've seen a speedup using the backends that support automatic differentiation compared to the NumPy backend with the SciPy optimizer. So we think it is significant.]
+.large[
+This is hard to answer rigorously.
+It depends on the model complexity and what the analysis is.
+For a single fit for a small to medium model the use of gradients might not have much effect.
+However, for larger models the speedups from automatic differentiation become more apparent, but may not matter as much as JIT compilation.
+
+In general though, lager more complex models derive greater benefits from automatic differentiation and JIT compilation.
+]
 
 ---
 # What SciPy optimizer are being used for MLE?
