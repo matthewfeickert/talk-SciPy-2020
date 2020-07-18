@@ -557,6 +557,84 @@ $$
 ]
 
 ---
+# How are gradients computed when using NumPy?
+
+<br>
+<br>
+<br>
+
+.large[
+As the NumPy backend with the SciPy optimizer doesn't support automatic differentiation, we make use of [`scipy.optimize.minimize`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/opt_scipy.py) along with the [Sequential Least Squares Programming (SLSQP) method](https://docs.scipy.org/doc/scipy-1.5.1/reference/optimize.minimize-slsqp.html#optimize-minimize-slsqp) for the fit.
+]
+
+---
+# How much of an affect does automatic differentiation have on fit speed?
+
+<br>
+
+.large[
+This is hard to answer rigorously.
+It depends on the model complexity and what the analysis is.
+For a single fit for a small to medium model the use of gradients might not have much effect.
+However, for larger models the speedups from automatic differentiation become more apparent, but may not matter as much as JIT compilation.
+
+In general though, lager more complex models derive greater benefits from automatic differentiation and JIT compilation.
+]
+
+---
+# What SciPy optimizers are being used for MLE?
+
+<br>
+<br>
+
+.large[
+We use [`scipy.optimize.minimize`](https://docs.scipy.org/doc/scipy-1.5.1/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize) along with the [Sequential Least Squares Programming (SLSQP) method](https://docs.scipy.org/doc/scipy-1.5.1/reference/optimize.minimize-slsqp.html#optimize-minimize-slsqp).
+We further leverage this through a custom [`AutoDiffOptimizerMixin`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/autodiff.py) class to feed the gradients from all the backends into `scipy.optimize.minimize` for performant optimization.
+In future versions (`v0.5.0` onwards), this mixin will be dropped in favor of tensor-backend shims.
+]
+
+---
+# Is the NumPy backend competitive against C++?
+
+<br>
+<br>
+<br>
+
+.large[
+Not for all models, but for some yes.
+If the model isn't too large and doesn't have a huge number of systematics, we can take advantage of the way the computations are laid out differently between `pyhf` and the C++ implementation and still be quite performant compared to the C++ thanks to vectorization.
+]
+
+---
+# Can I use `pyhf` if I'm not a physicist?
+
+<br>
+<br>
+
+.large[
+`pyhf` itself is focused exclusively on the HistFactory statistical model, but if you are performing counting experiments with template fits then maybe.
+
+We hope that `pyhf` serves as an example of how models can be expressed in a declarative manner and implemented in a backend agnostic manner.
+]
+
+---
+# Is this frequentist only?
+
+.kol-1-2.width-95[
+<br>
+.large[
+Not exactly.
+The inference machinery that `pyhf` comes equipped with is frequentist focused, but the likelihood is common to both frequentist and Bayesian statistics.
+You could use the `pyhf` model in conjunction with priors to do Bayesian inference.
+
+One of our "investigative" research areas is looking at using [emcee](https://github.com/dfm/emcee) and [PyMC3](https://github.com/pymc-devs/pymc3) to do Bayesian inference with `pyhf` models.
+]
+]
+.kol-1-2.center.width-95[
+[![Lukas_emcee_tweet](figures/Lukas_emcee_tweet.png)](https://twitter.com/lukasheinrich_/status/1215680496694366209)
+]
+
+---
 # References
 
 1. F. James, Y. Perrin, L. Lyons, .italic[[Workshop on confidence limits: Proceedings](http://inspirehep.net/record/534129)], 2000.
