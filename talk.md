@@ -613,18 +613,18 @@ We hope that `pyhf` serves as an example of how models can be expressed in a dec
 ---
 # Is this frequentist only?
 
-
+.kol-1-2.width-95[
 <br>
-<br>
-
 .large[
 Not exactly.
 The inference machinery that `pyhf` comes equipped with is frequentist focused, but the likelihood is common to both frequentist and Bayesian statistics.
 You could use the `pyhf` model in conjunction with priors to do Bayesian inference.
-]
 
-.large[
 One of our "investigative" research areas is looking at using [emcee](https://github.com/dfm/emcee) and [PyMC3](https://github.com/pymc-devs/pymc3) to do Bayesian inference with `pyhf` models.
+]
+]
+.kol-1-2.center.width-95[
+[![Lukas_emcee_tweet](figures/Lukas_emcee_tweet.png)](https://twitter.com/lukasheinrich_/status/1215680496694366209)
 ]
 
 ---
