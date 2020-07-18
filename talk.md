@@ -564,7 +564,7 @@ $$
 <br>
 
 .large[
-As the NumPy backend with the SciPy optimizer doesn't support automatic differentiation, we make use of [`scipy.optimize.minimize`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/autodiff.py) along with the [Sequential Least Squares Programming (SLSQP) method](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/opt_scipy.py) for the fit.
+As the NumPy backend with the SciPy optimizer doesn't support automatic differentiation, we make use of [`scipy.optimize.minimize`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/opt_scipy.p) along with the [Sequential Least Squares Programming (SLSQP) method](https://docs.scipy.org/doc/scipy-1.5.1/reference/optimize.minimize-slsqp.html#optimize-minimize-slsqp) for the fit.
 ]
 
 ---
@@ -588,7 +588,7 @@ In general though, lager more complex models derive greater benefits from automa
 <br>
 
 .large[
-We use [`scipy.optimize.minimize`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize) along with the [Sequential Least Squares Programming (SLSQP) method](https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html#optimize-minimize-slsqp).
+We use [`scipy.optimize.minimize`](https://docs.scipy.org/doc/scipy-1.5.1/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize) along with the [Sequential Least Squares Programming (SLSQP) method](https://docs.scipy.org/doc/scipy-1.5.1/reference/optimize.minimize-slsqp.html#optimize-minimize-slsqp).
 We further leverage this through a custom [`AutoDiffOptimizerMixin`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/autodiff.py) class to feed the gradients from all the backends into `scipy.optimize.minimize` for performant optimization.
 In future versions (`v0.5.0` onwards), this mixin will be dropped in favor of tensor-backend shims.
 ]
