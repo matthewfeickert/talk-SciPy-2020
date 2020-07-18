@@ -559,7 +559,12 @@ $$
 ---
 # How are gradients computed when using NumPy?
 
-- We make used of [`scipy.optimize.minimize`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/autodiff.py) along with [](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/opt_scipy.py)
+<br>
+<br>
+
+.large[
+As the NumPy backend with the SciPy optimizer don't have automatic differentiation, we make used of [`scipy.optimize.minimize`](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/autodiff.py) along with the [Sequential Least Squares Programming (SLSQP) method](https://github.com/scikit-hep/pyhf/blob/0f99cc488156e0826a27f55abc946d537a8922af/src/pyhf/optimize/opt_scipy.py) and information on the Jacobian for the fit.
+]
 
 ---
 # How much of an affect does automatic differentiation have on fit speed?
@@ -567,7 +572,7 @@ $$
 <br>
 <br>
 
-- Rigorous benchmarking hasn't been done yet, but for larger models we've seen a speedup using the backends that support automatic differentiation compared to the NumPy backend with the SciPy optimizer. So we think it is significant.
+.large[Rigorous benchmarking hasn't been done yet, but for larger models we've seen a speedup using the backends that support automatic differentiation compared to the NumPy backend with the SciPy optimizer. So we think it is significant.]
 
 ---
 # What SciPy optimizer are being used for MLE?
